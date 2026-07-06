@@ -1,0 +1,6 @@
+scikit-learn==1.8.0
+xgboost==3.2.0
+numpy
+pandas
+joblib
+shap==0.52.0

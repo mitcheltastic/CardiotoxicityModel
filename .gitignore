@@ -1,7 +1,77 @@
-# Python
+# ==========================================
+# Python & Virtual Environments
+# ==========================================
 __pycache__/
-*.pyc
-*.pyo
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Jupyter
-.ipynb_checkpoints/
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# ==========================================
+# Jupyter Notebooks
+# ==========================================
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+checkpoint_*.ipynb
+
+# ==========================================
+# Local Environment Variables & Secrets
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==========================================
+# IDEs and Editors
+# ==========================================
+.vscode/
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ==========================================
+# OS Files
+# ==========================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# Machine Learning & Temporary Test Outputs
+# ==========================================
+# Ignore local temporary/test model outputs in root
+test_keras.joblib
+test_keras_save.keras
