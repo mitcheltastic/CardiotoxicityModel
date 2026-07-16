@@ -8,6 +8,52 @@ bundle = joblib.load('deployable_chantest_3class.joblib')
 background = joblib.load('shap_background.joblib')
 explainer = shap.KernelExplainer(bundle['model'].predict_proba, background)
 
+ALPHA = 0.154
+Q_HAT = 0.6275
+SEVERITY = {"low": 0, "intermediate": 1, "high": 2}
+CALIBRATION_NOTE = (
+    "Conformal threshold calibrated at drug level on probability\n"
+    "vectors averaged over 2000 replicate samples per drug (leave-one-drug-out over 12\n"
+    "training drugs). This response is based on a single input row; the coverage\n"
+    "guarantee does not strictly transfer to single-row input."
+)
+
+def conformal_from_proba(prob_dict):
+    threshold = 1.0 - Q_HAT
+    included_classes = []
+    for c, p in prob_dict.items():
+        if p >= threshold:
+            included_classes.append(c)
+    included_classes.sort(key=lambda c: SEVERITY[c.lower()], reverse=True)
+    set_size = len(included_classes)
+    is_ambiguous = set_size > 1
+    
+    if set_size == 0:
+        argmax_class = max(prob_dict, key=prob_dict.get)
+        return {
+            "prediction_set": [],
+            "recommended_action": argmax_class.lower(),
+            "set_size": 0,
+            "is_ambiguous": True,
+            "out_of_distribution": True,
+            "warning": "No class met the conformal threshold. Result is not covered by the guarantee.",
+            "alpha": ALPHA,
+            "q_hat": Q_HAT,
+            "calibration_note": CALIBRATION_NOTE
+        }
+    
+    recommended_action = included_classes[0]
+    return {
+        "prediction_set": included_classes,
+        "recommended_action": recommended_action.lower(),
+        "set_size": set_size,
+        "is_ambiguous": is_ambiguous,
+        "out_of_distribution": False,
+        "alpha": ALPHA,
+        "q_hat": Q_HAT,
+        "calibration_note": CALIBRATION_NOTE
+    }
+
 features = ['qNet', 'dvdtmax', 'vmax', 'vrest', 'APD50', 'APD90', 'max_dv', 'camax', 'carest', 'CaTD50', 'CaTD90']
 
 def predict(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90):
@@ -19,8 +65,26 @@ def predict(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaT
     classes = [bundle['inverse_class_map'][i] for i in range(len(proba))]
     prob_dict = {classes[i]: float(proba[i]) for i in range(len(proba))}
     tier = bundle['inverse_class_map'][pred]
+    legacy_str = f"Predicted Risk Tier: {tier.capitalize()}"
     
-    return prob_dict, f"Predicted Risk Tier: {tier.capitalize()}"
+    conformal_dict = conformal_from_proba(prob_dict)
+    
+    if conformal_dict.get("out_of_distribution"):
+        ui_str = (
+            f"### ⚠️ WARNING: Out of Distribution\n"
+            f"**{conformal_dict['warning']}**\n\n"
+            f"Fallback Recommended Action: **{conformal_dict['recommended_action'].capitalize()}**"
+        )
+    elif conformal_dict["is_ambiguous"]:
+        ui_str = (
+            f"### Recommended Action: {conformal_dict['recommended_action'].capitalize()}\n"
+            f"**Prediction Set:** {', '.join([c.capitalize() for c in conformal_dict['prediction_set']])}\n\n"
+            f"*The model cannot rule out the more severe tier, so the more severe tier is recommended.*"
+        )
+    else:
+        ui_str = f"### Recommended Action: {conformal_dict['recommended_action'].capitalize()}"
+        
+    return prob_dict, legacy_str, conformal_dict, ui_str
 
 def explain(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90):
     raw = np.array([[qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90]])
@@ -86,11 +150,13 @@ with gr.Blocks(title="CiPA TdP Risk Classifier") as demo:
             )
             
         with gr.Column():
+            action_out = gr.Markdown()
             prob_out = gr.Label(label='Class probabilities')
-            tier_out = gr.Textbox(label='Predicted TdP risk tier')
+            tier_out = gr.Textbox(label='Predicted TdP risk tier (Legacy)', visible=False)
+            conformal_out = gr.JSON(label="Conformal Prediction Details")
             explain_out = gr.JSON(label="SHAP Explanation")
             
-    predict_btn.click(fn=predict, inputs=inputs, outputs=[prob_out, tier_out], api_name="predict")
+    predict_btn.click(fn=predict, inputs=inputs, outputs=[prob_out, tier_out, conformal_out, action_out], api_name="predict")
     explain_btn.click(fn=explain, inputs=inputs, outputs=explain_out, api_name="explain")
 
 if __name__ == '__main__':
