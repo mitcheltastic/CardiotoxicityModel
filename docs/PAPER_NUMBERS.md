@@ -189,3 +189,84 @@ Recomputed independently from `results/cross_platform_probs_*_rev.csv` at Rank 1
   - Chantest Misses = 4/16 -> **Coverage: 12/16 (0.7500)**
   - Nanion Misses = 4/16 -> **Coverage: 12/16 (0.7500)**
   - Manual Misses = 2/16 -> **Coverage: 14/16 (0.8750)**
+
+---
+
+---
+
+## H. BASELINE BASE LEARNER DAN CONFORMAL RF
+
+Setiap angka pada seksi ini secara eksplisit menyebutkan file sumber dan populasi evaluasinya.
+
+### H1. Performa Base Learner (16 Obat Uji, Model Beku, Tanpa Refit)
+* **Sumber Data:** `docs/STEP11_BASE_LEARNER_REFERENCE.md` & `results/base_learner_reference_rev.csv`
+* **Populasi Evaluasi:** 16 obat test held-out per platform (`chantest`, `nanion`, `manual`), model beku dari `models/chantest_stacking_model_rev.joblib`.
+* **Metrik Drug-Level Macro-F1 & Under-Triage:**
+  - **Chantest Platform (16 obat):**
+    - RF Base Learner: Macro-F1 = `0.877778` (Benar: 14/16, Under-triage: `0`)
+    - XGB Base Learner: Macro-F1 = `0.819373` (Benar: 13/16, Under-triage: `0`)
+    - STACK Model: Macro-F1 = `0.694444` (Benar: 11/16, Under-triage: `1` [senyawa `disopyramide`])
+  - **Nanion Platform (16 obat):**
+    - RF Base Learner: Macro-F1 = `0.819373` (Benar: 13/16, Under-triage: `0`)
+    - XGB Base Learner: Macro-F1 = `0.754762` (Benar: 12/16, Under-triage: `0`)
+    - STACK Model: Macro-F1 = `0.621032` (Benar: 10/16, Under-triage: `1` [senyawa `disopyramide`])
+  - **Manual Platform (16 obat):**
+    - RF Base Learner: Macro-F1 = `0.755556` (Benar: 12/16, Under-triage: `1` [senyawa `clarithromycin`])
+    - XGB Base Learner: Macro-F1 = `0.819373` (Benar: 13/16, Under-triage: `0`)
+    - STACK Model: Macro-F1 = `0.754762` (Benar: 12/16, Under-triage: `0`)
+* **Selisih Berpasangan Paired Bootstrap STACK minus Base Learner (10.000 Iterasi, Seed 42, Verbatim STEP11):**
+  - **Chantest Platform:**
+    - STACK - RF: Point Estimate Diff = `-0.183333` | Bootstrap Median = `-0.187302` (95% CI `[-0.448155, +0.000000]`, Lebar CI: `0.448155`, Memuat 0: YA)
+    - STACK - XGB: Point Estimate Diff = `-0.124929` | Bootstrap Median = `-0.123151` (95% CI `[-0.357156, +0.000000]`, Lebar CI: `0.357156`, Memuat 0: YA)
+  - **Nanion Platform:**
+    - STACK - RF: Point Estimate Diff = `-0.198341` | Bootstrap Median = `-0.197739` (95% CI `[-0.454772, +0.000000]`, Lebar CI: `0.454772`, Memuat 0: YA)
+    - STACK - XGB: Point Estimate Diff = `-0.133730` | Bootstrap Median = `-0.126623` (95% CI `[-0.374185, +0.000000]`, Lebar CI: `0.374185`, Memuat 0: YA)
+  - **Manual Platform:**
+    - STACK - RF: Point Estimate Diff = `-0.000794` | Bootstrap Median = `+0.000000` (95% CI `[-0.197902, +0.188889]`, Lebar CI: `0.386791`, Memuat 0: YA)
+    - STACK - XGB: Point Estimate Diff = `-0.064611` | Bootstrap Median = `-0.061601` (95% CI `[-0.241282, +0.000000]`, Lebar CI: `0.241282`, Memuat 0: YA)
+
+### H2. Diagnostik STACK vs Base Learner (Terverifikasi Sesuai STEP12)
+* **Sumber Data:** `docs/STEP12_STACK_VS_BASE_DIAGNOSTIC.md`
+* **Populasi Evaluasi:** 16 obat test held-out per platform.
+* **Daftar Obat Terverifikasi (RF BENAR, STACK SALAH):**
+  - **Chantest Platform (`3` obat):**
+    - `disopyramide` (True HIGH): RF & XGB high, STACK int → **Kategori A** (Meta Menimpa Kedua Base Benar)
+    - `loratadine` (True LOW): RF & XGB low, STACK int → **Kategori A** (Meta Menimpa Kedua Base Benar)
+    - `tamoxifen` (True LOW): RF low, XGB int, STACK int → **Kategori B** (Meta Mengikuti Base Salah)
+  - **Nanion Platform (`3` obat):**
+    - `disopyramide` (True HIGH): RF & XGB high, STACK int → **Kategori A** (Meta Menimpa Kedua Base Benar)
+    - `loratadine` (True LOW): RF & XGB low, STACK int → **Kategori A** (Meta Menimpa Kedua Base Benar)
+    - `tamoxifen` (True LOW): RF low, XGB int, STACK int → **Kategori B** (Meta Mengikuti Base Salah)
+  - **Manual Platform (`1` obat):**
+    - `tamoxifen` (True LOW): RF low, XGB low, STACK int → **Kategori A** (Meta Menimpa Kedua Base Benar)
+* **Konfirmasi Jumlah Obat Terverifikasi:** Jumlah obat di mana RF BENAR tapi STACK SALAH adalah **3 obat** pada Chantest, **3 obat** pada Nanion, dan **1 obat** pada Manual (`3 / 3 / 1`).
+* **Temuan Karakteristik Meta-Learner STACK:**
+  - Meta-learner menimpa KEDUA base learner yang sudah benar pada 2 senyawa (`disopyramide` dan `loratadine`) di Chantest dan Nanion.
+  - Ketiga kesalahan khas STACK mengarah ke kelas **INTERMEDIATE**.
+  - Senyawa `disopyramide` (True HIGH) diprediksi **HIGH secara benar oleh kedua base learner (RF dan XGB)** di ketiga platform, namun di-under-triage menjadi INTERMEDIATE oleh meta-learner STACK di Chantest dan Nanion.
+
+### H3. Conformal RF (Terverifikasi)
+* **Sumber Data:** `docs/STEP13C_RF_CONFORMAL_FIXED.md` & `results/conformal_rf_rev.csv`
+* **Populasi Evaluasi:** 12 obat training chantest (kalibrasi LODO) & 16 obat test per platform.
+* **12 Skor Non-Conformity $s_d$ LODO RF:** `cisapride` (`0.023518`), `dofetilide` (`0.025005`), `terfenadine` (`0.102810`), `mexiletine` (`0.102904`), `bepridil` (`0.104039`), `chlorpromazine` (`0.242225`), `quinidine` (`0.273810`), `ranolazine` (`0.322894`), `verapamil` (`0.368977`), `ondansetron` (`0.378064`), `sotalol` (`0.533987`), `diltiazem` (`0.904169`).
+* **Titik Operasi Terpilih:** **Rank 11** ($\hat{q} = 0.533987$, Threshold $= 0.466013$, Nominal Coverage $= 11/13 pprox 0.846154$).
+* **Performa Per Platform pada Rank 11:**
+  - **Chantest:** Benar `14/16`, Over-called `2`, Under-triage `0`, Abstain `0`, Rata-rata Ukuran Set `1.0000`, Sebaran Set `{0:0, 1:16, 2:0, 3:0}`, Coverage Empiris `0.8750` vs Nominal `0.8462` (Selisih `+0.0288`).
+  - **Nanion:** Benar `13/16`, Over-called `3`, Under-triage `0`, Abstain `0`, Rata-rata Ukuran Set `1.0000`, Sebaran Set `{0:0, 1:16, 2:0, 3:0}`, Coverage Empiris `0.8125` vs Nominal `0.8462` (Selisih `-0.0337`).
+  - **Manual:** Benar `13/16`, Over-called `3`, Under-triage `0`, Abstain `0`, Rata-rata Ukuran Set `1.0625`, Sebaran Set `{0:0, 1:15, 2:1, 3:0}`, Coverage Empiris `0.8125` vs Nominal `0.8462` (Selisih `-0.0337`).
+* **Batas Atas Rule-of-Three Under-Triage:** $3 / 16 = 0.187500$ ($18.75\%$).
+* **Detail Senyawa `clarithromycin` di Manual:** Probabilitas RF ($p_{	ext{high}}=0.0$, $p_{	ext{int}}=0.476429$, $p_{	ext{low}}=0.523571$). Pada Rank 11 (Threshold $0.466013$), set conformal melebar menjadi `{intermediate, low}` (ukuran 2), aksi decision = `intermediate` (1), hasil **Benar (Correct)**. Under-triage dihapus sah lewat perluasan set, bukan aturan set kosong.
+
+### H4. Perbandingan RF+Conformal vs STACK+Conformal
+* **Sumber Data:** `docs/STEP14_CONFORMAL_COMPARISON.md` & `results/conformal_comparison_bootstrap_rev.csv`
+* **Populasi Evaluasi:** 16 obat test held-out per platform, 10.000 iterasi paired bootstrap, seed 42.
+* **Hasil Bootstrap Diff (RF+Conformal minus STACK+Conformal):**
+  - **Chantest Platform:**
+    - Selisih Proporsi Benar: Median = `+0.187500` (95% CI `[+0.000000, +0.375000]`, Memuat 0, Batas bawah = 0.0)
+    - Selisih Rata-rata Ukuran Set: Median = `-0.125000` (95% CI `[-0.312500, +0.000000]`, Memuat 0, Batas atas = 0.0)
+  - **Nanion Platform:**
+    - Selisih Proporsi Benar: Median = `+0.125000` (95% CI `[+0.000000, +0.312500]`, Memuat 0, Batas bawah = 0.0)
+    - Selisih Rata-rata Ukuran Set: Median = `-0.125000` (95% CI `[-0.312500, +0.000000]`, Memuat 0, Batas atas = 0.0)
+  - **Manual Platform:**
+    - Selisih Proporsi Benar: Median = `+0.125000` (95% CI `[+0.000000, +0.312500]`, Memuat 0, Batas bawah = 0.0)
+    - Selisih Rata-rata Ukuran Set: Median = `-0.312500` (95% CI `[-0.562500, -0.125000]`, **TIDAK Memuat 0**)

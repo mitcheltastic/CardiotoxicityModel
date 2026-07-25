@@ -139,6 +139,10 @@ reported numbers are leakage-free. This is the key contribution — don't bury i
 ---
 
 ## 8. Repo / artifacts map
+
+> ⚠️ Bagian di bawah ini merujuk artifak dari dataset lama (sebelum _rev) dan sudah tidak
+> berlaku. Hasil yang berlaku ada di results/ dan docs/PAPER_NUMBERS.md.
+
 ```
 TrainAI/
   plus_ultra.ipynb                         # all phases 0–5c, executed
@@ -166,6 +170,10 @@ shap + matplotlib installed. seed=42 everywhere.
 ---
 
 ## 9. NEXT SESSION GOAL — deployment / temporary testing
+
+> ⚠️ Bagian di bawah ini merujuk artifak dari dataset lama (sebelum _rev) dan sudah tidak
+> berlaku. Hasil yang berlaku ada di results/ dan docs/PAPER_NUMBERS.md.
+
 Build and test an inference path around `deployable_chantest_3class.joblib`:
 1. Confirm the bundle reloads cleanly in a fresh env **with `deploy_utils.py` present**.
 2. Wrap it in a minimal inference function/app: 11 raw biomarker inputs → scale → predict →

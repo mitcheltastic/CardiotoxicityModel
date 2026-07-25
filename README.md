@@ -1,10 +1,22 @@
 # In-Silico Cardiotoxicity (TdP) Risk Prediction
 
+> ## ⚠️ STATUS DOKUMEN
+> Angka dan hasil di README ini berasal dari dataset **sebelum revisi `_rev`** dan
+> **sudah tidak berlaku**. Dataset telah diganti pada 2026-07-25 dan seluruh hasil
+> dihitung ulang.
+>
+> **Sumber angka yang berlaku:** `docs/PAPER_NUMBERS.md`
+> **Ringkasan naratif:** `docs/STORYLINE.md`
+> **Figure resmi:** `results/` (tertanggal 2026-07-25)
+
 A machine learning pipeline for predicting **Torsade de Pointes (TdP)** cardiotoxicity risk from 11 CiPA cardiac biomarkers. Built as part of an undergraduate thesis project.
 
 ## Overview
 
 This project classifies drugs into three clinical risk tiers — **High**, **Intermediate**, and **Low** — using stacking ensembles of Random Forest, XGBoost, Logistic Regression, SVM, and deep learning (ANN) models. The pipeline addresses a critical **data leakage** issue discovered during development by enforcing drug-level grouped cross-validation (`StratifiedGroupKFold`).
+
+> ⚠️ Tabel di bawah ini berisi angka dari dataset lama. Angka yang berlaku ada di
+> `docs/PAPER_NUMBERS.md`.
 
 ### Key Results
 
@@ -25,33 +37,31 @@ The model uses the 11 biomarkers from the [CiPA initiative](https://cipaproject.
 
 ## Project Structure
 
+> ⚠️ Bagian di bawah ini merujuk artifak dari dataset lama (sebelum _rev) dan sudah tidak
+> berlaku. Hasil yang berlaku ada di results/ dan docs/PAPER_NUMBERS.md.
+
 ```
 TrainAI/
-├── plus_ultra.ipynb              # Main notebook (full pipeline: Phases 0–5)
-├── deploy_utils.py               # Custom wrappers required for model deserialization
-├── debug_classifier.py           # Debugging utility
-├── PROJECT_SUMMARY.md            # Detailed project documentation
-│
 ├── data/                         # Simulation datasets (train/test splits)
-│   ├── chantest_training.csv
-│   ├── chantest_testing.csv
-│   ├── nanion_training.csv
-│   ├── nanion_testing.csv
-│   ├── manual_training(in).csv
-│   └── manual_testing(in).csv
-│
-└── artifacts/                    # Trained models, results, and figures
-    ├── deployable_chantest_3class.joblib   # ⭐ Final deployable model bundle
-    ├── base_models_grouped.joblib          # Leakage-free base estimators
-    ├── phase3_protocolA_results.csv        # 612-config ensemble sweep results
-    ├── phase4_bootstrap.joblib             # 10K bootstrap raw results
-    ├── phase4_bootstrap_summary.csv        # Bootstrap medians & 95% CIs
-    ├── shap_values.joblib                  # SHAP explainability values
-    ├── figures/                            # Publication-grade thesis figures
-    ├── shap/                               # SHAP summary plots
-    ├── keras/                              # ANN models (row-level CV)
-    └── keras_grouped/                      # ANN models (grouped CV)
+├── docs/                         # Audit reports, step-by-step validation, and paper numbers
+├── figures/                      # Project figure output directory
+├── hf_space/                     # Hugging Face Spaces Gradio web application & deployment
+├── logs/                         # Execution and pipeline logs
+├── models/                       # Trained model checkpoints & saved states
+├── results/                      # ⭐ Official _rev publication figures & evaluation tables (2026-07-25)
+├── scripts/                      # Modular execution scripts
+│   ├── legacy/                   # Historical pipeline scripts
+│   ├── pipeline/                 # Core training, CV, and evaluation scripts
+│   └── reporting/                # Reporting and figure generation scripts
+├── src/                          # Source modules and data loader utilities
+├── artifacts/                    # (artifak lama, jangan dipakai untuk paper)
+├── deploy_utils.py               # Utility wrappers for model deployment
+├── plus_ultra.ipynb              # Notebook development workspace
+└── README.md                     # Project README
 ```
+
+> ⚠️ Angka pada bagian ini (F1 0.999 / 0.460, 612 konfigurasi, hasil SHAP) berasal dari
+> dataset lama. Protokol yang dipakai sekarang dijelaskan di `docs/STORYLINE.md`.
 
 ## Methodology
 
@@ -66,6 +76,9 @@ TrainAI/
 ### Loading the Deployable Model
 
 > **⚠️ Important:** `deploy_utils.py` must be importable when loading the model.
+
+> ⚠️ Bagian di bawah ini merujuk artifak dari dataset lama (sebelum _rev) dan sudah tidak
+> berlaku. Hasil yang berlaku ada di results/ dan docs/PAPER_NUMBERS.md.
 
 ```python
 import deploy_utils  # Must be imported before loading

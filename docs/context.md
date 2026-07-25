@@ -1,3 +1,11 @@
+> [WARNING] STALE - OLD DATA. All numbers in this file were computed on the pre-`_rev` datasets and are
+> SUPERSEDED. Do not cite, quote, or reuse any figure from this document in the ICCEREC 2026
+> paper. Authoritative numbers come from the `_rev` re-run only.
+
+> ⚠️ STALE — OLD DATA. All numbers in this file were computed on the pre-`_rev` datasets and are
+> SUPERSEDED. Do not cite, quote, or reuse any figure from this document in the ICCEREC 2026
+> paper. Authoritative numbers come from the `_rev` re-run only.
+
 # context.md — Python Training Pipeline Knowledge Dump
 
 > Complete consolidation of what's known about Mitchel's Python ML/DL training
