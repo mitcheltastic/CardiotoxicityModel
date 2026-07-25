@@ -75,3 +75,5 @@ Thumbs.db
 # Ignore local temporary/test model outputs in root
 test_keras.joblib
 test_keras_save.keras
+# Scratch & Bytecode
+*.pyc

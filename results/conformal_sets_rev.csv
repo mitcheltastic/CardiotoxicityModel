@@ -1,0 +1,337 @@
+alpha,q_hat,platform,drug_name,true_label,hard_pred,prediction_set,action,outcome
+0.077,0.986695,chantest,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,chantest,azimilide,high,0,['high'],high,correct
+0.077,0.986695,chantest,clarithromycin,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,chantest,clozapine,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,chantest,disopyramide,high,1,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.077,0.986695,chantest,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,chantest,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,chantest,loratadine,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,chantest,metoprolol,low,2,"['intermediate', 'low']",intermediate,over-called
+0.077,0.986695,chantest,nifedipine,low,2,['low'],low,correct
+0.077,0.986695,chantest,nitrendipine,low,2,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,chantest,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.077,0.986695,chantest,risperidone,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.077,0.986695,chantest,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.077,0.986695,chantest,vandetanib,high,0,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,nanion,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,nanion,azimilide,high,0,['high'],high,correct
+0.077,0.986695,nanion,clarithromycin,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.077,0.986695,nanion,disopyramide,high,1,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.077,0.986695,nanion,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,nanion,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,nanion,loratadine,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,nanion,metoprolol,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,nanion,nifedipine,low,2,['low'],low,correct
+0.077,0.986695,nanion,nitrendipine,low,2,['low'],low,correct
+0.077,0.986695,nanion,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.077,0.986695,nanion,risperidone,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.077,0.986695,nanion,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.077,0.986695,nanion,vandetanib,high,0,"['high', 'low']",high,correct
+0.077,0.986695,manual,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,manual,azimilide,high,0,"['high', 'intermediate']",high,correct
+0.077,0.986695,manual,clarithromycin,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,clozapine,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,disopyramide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,manual,domperidone,intermediate,0,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.077,0.986695,manual,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.077,0.986695,manual,loratadine,low,2,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,metoprolol,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,nifedipine,low,2,['low'],low,correct
+0.077,0.986695,manual,nitrendipine,low,2,['low'],low,correct
+0.077,0.986695,manual,pimozide,intermediate,0,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,risperidone,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.077,0.986695,manual,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.077,0.986695,manual,vandetanib,high,0,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,chantest,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,chantest,azimilide,high,0,['high'],high,correct
+0.1,0.986695,chantest,clarithromycin,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,chantest,clozapine,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,chantest,disopyramide,high,1,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.1,0.986695,chantest,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,chantest,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,chantest,loratadine,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,chantest,metoprolol,low,2,"['intermediate', 'low']",intermediate,over-called
+0.1,0.986695,chantest,nifedipine,low,2,['low'],low,correct
+0.1,0.986695,chantest,nitrendipine,low,2,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,chantest,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.1,0.986695,chantest,risperidone,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.1,0.986695,chantest,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.1,0.986695,chantest,vandetanib,high,0,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,nanion,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,nanion,azimilide,high,0,['high'],high,correct
+0.1,0.986695,nanion,clarithromycin,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.1,0.986695,nanion,disopyramide,high,1,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.1,0.986695,nanion,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,nanion,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,nanion,loratadine,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,nanion,metoprolol,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,nanion,nifedipine,low,2,['low'],low,correct
+0.1,0.986695,nanion,nitrendipine,low,2,['low'],low,correct
+0.1,0.986695,nanion,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.1,0.986695,nanion,risperidone,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.1,0.986695,nanion,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.1,0.986695,nanion,vandetanib,high,0,"['high', 'low']",high,correct
+0.1,0.986695,manual,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,manual,azimilide,high,0,"['high', 'intermediate']",high,correct
+0.1,0.986695,manual,clarithromycin,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,clozapine,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,disopyramide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,manual,domperidone,intermediate,0,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.1,0.986695,manual,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.1,0.986695,manual,loratadine,low,2,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,metoprolol,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,nifedipine,low,2,['low'],low,correct
+0.1,0.986695,manual,nitrendipine,low,2,['low'],low,correct
+0.1,0.986695,manual,pimozide,intermediate,0,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,risperidone,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.1,0.986695,manual,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.1,0.986695,manual,vandetanib,high,0,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,chantest,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,chantest,azimilide,high,0,['high'],high,correct
+0.15,0.986695,chantest,clarithromycin,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,chantest,clozapine,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,chantest,disopyramide,high,1,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.15,0.986695,chantest,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,chantest,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,chantest,loratadine,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,chantest,metoprolol,low,2,"['intermediate', 'low']",intermediate,over-called
+0.15,0.986695,chantest,nifedipine,low,2,['low'],low,correct
+0.15,0.986695,chantest,nitrendipine,low,2,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,chantest,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.15,0.986695,chantest,risperidone,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.15,0.986695,chantest,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.15,0.986695,chantest,vandetanib,high,0,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,nanion,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,nanion,azimilide,high,0,['high'],high,correct
+0.15,0.986695,nanion,clarithromycin,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.15,0.986695,nanion,disopyramide,high,1,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.15,0.986695,nanion,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,nanion,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,nanion,loratadine,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,nanion,metoprolol,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,nanion,nifedipine,low,2,['low'],low,correct
+0.15,0.986695,nanion,nitrendipine,low,2,['low'],low,correct
+0.15,0.986695,nanion,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.15,0.986695,nanion,risperidone,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.15,0.986695,nanion,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.15,0.986695,nanion,vandetanib,high,0,"['high', 'low']",high,correct
+0.15,0.986695,manual,astemizole,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,manual,azimilide,high,0,"['high', 'intermediate']",high,correct
+0.15,0.986695,manual,clarithromycin,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,clozapine,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,disopyramide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,manual,domperidone,intermediate,0,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,droperidol,intermediate,1,"['high', 'intermediate']",high,over-called
+0.15,0.986695,manual,ibutilide,high,0,"['high', 'intermediate', 'low']",high,correct
+0.15,0.986695,manual,loratadine,low,2,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,metoprolol,low,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,nifedipine,low,2,['low'],low,correct
+0.15,0.986695,manual,nitrendipine,low,2,['low'],low,correct
+0.15,0.986695,manual,pimozide,intermediate,0,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,risperidone,intermediate,1,"['high', 'intermediate', 'low']",high,over-called
+0.15,0.986695,manual,tamoxifen,low,1,"['intermediate', 'low']",intermediate,over-called
+0.15,0.986695,manual,vandetanib,high,0,"['high', 'intermediate', 'low']",high,correct
+0.2,0.7628299999999996,chantest,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,chantest,azimilide,high,0,['high'],high,correct
+0.2,0.7628299999999996,chantest,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,chantest,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,chantest,disopyramide,high,1,"['high', 'intermediate']",high,correct
+0.2,0.7628299999999996,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.2,0.7628299999999996,chantest,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,chantest,ibutilide,high,0,['high'],high,correct
+0.2,0.7628299999999996,chantest,loratadine,low,1,['intermediate'],intermediate,over-called
+0.2,0.7628299999999996,chantest,metoprolol,low,2,"['intermediate', 'low']",intermediate,over-called
+0.2,0.7628299999999996,chantest,nifedipine,low,2,['low'],low,correct
+0.2,0.7628299999999996,chantest,nitrendipine,low,2,['low'],low,correct
+0.2,0.7628299999999996,chantest,pimozide,intermediate,0,['high'],high,over-called
+0.2,0.7628299999999996,chantest,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,chantest,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.2,0.7628299999999996,chantest,vandetanib,high,0,['high'],high,correct
+0.2,0.7628299999999996,nanion,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,nanion,azimilide,high,0,['high'],high,correct
+0.2,0.7628299999999996,nanion,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,nanion,disopyramide,high,1,"['high', 'intermediate']",high,correct
+0.2,0.7628299999999996,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.2,0.7628299999999996,nanion,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,nanion,ibutilide,high,0,['high'],high,correct
+0.2,0.7628299999999996,nanion,loratadine,low,1,"['intermediate', 'low']",intermediate,over-called
+0.2,0.7628299999999996,nanion,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.2,0.7628299999999996,nanion,nifedipine,low,2,['low'],low,correct
+0.2,0.7628299999999996,nanion,nitrendipine,low,2,['low'],low,correct
+0.2,0.7628299999999996,nanion,pimozide,intermediate,0,['high'],high,over-called
+0.2,0.7628299999999996,nanion,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,nanion,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.2,0.7628299999999996,nanion,vandetanib,high,0,['high'],high,correct
+0.2,0.7628299999999996,manual,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,manual,azimilide,high,0,['high'],high,correct
+0.2,0.7628299999999996,manual,clarithromycin,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.2,0.7628299999999996,manual,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,manual,disopyramide,high,0,['high'],high,correct
+0.2,0.7628299999999996,manual,domperidone,intermediate,0,"['high', 'intermediate']",high,over-called
+0.2,0.7628299999999996,manual,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,manual,ibutilide,high,0,['high'],high,correct
+0.2,0.7628299999999996,manual,loratadine,low,2,"['intermediate', 'low']",intermediate,over-called
+0.2,0.7628299999999996,manual,metoprolol,low,1,"['high', 'intermediate']",high,over-called
+0.2,0.7628299999999996,manual,nifedipine,low,2,['low'],low,correct
+0.2,0.7628299999999996,manual,nitrendipine,low,2,['low'],low,correct
+0.2,0.7628299999999996,manual,pimozide,intermediate,0,"['high', 'intermediate']",high,over-called
+0.2,0.7628299999999996,manual,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.2,0.7628299999999996,manual,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.2,0.7628299999999996,manual,vandetanib,high,0,"['high', 'intermediate']",high,correct
+0.25,0.7033450000000028,chantest,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,chantest,azimilide,high,0,['high'],high,correct
+0.25,0.7033450000000028,chantest,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,chantest,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,chantest,disopyramide,high,1,"['high', 'intermediate']",high,correct
+0.25,0.7033450000000028,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.25,0.7033450000000028,chantest,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,chantest,ibutilide,high,0,['high'],high,correct
+0.25,0.7033450000000028,chantest,loratadine,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,chantest,metoprolol,low,2,['low'],low,correct
+0.25,0.7033450000000028,chantest,nifedipine,low,2,['low'],low,correct
+0.25,0.7033450000000028,chantest,nitrendipine,low,2,['low'],low,correct
+0.25,0.7033450000000028,chantest,pimozide,intermediate,0,['high'],high,over-called
+0.25,0.7033450000000028,chantest,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,chantest,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,chantest,vandetanib,high,0,['high'],high,correct
+0.25,0.7033450000000028,nanion,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,nanion,azimilide,high,0,['high'],high,correct
+0.25,0.7033450000000028,nanion,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,nanion,disopyramide,high,1,['intermediate'],intermediate,under-triaged
+0.25,0.7033450000000028,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.25,0.7033450000000028,nanion,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,nanion,ibutilide,high,0,['high'],high,correct
+0.25,0.7033450000000028,nanion,loratadine,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,nanion,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,nanion,nifedipine,low,2,['low'],low,correct
+0.25,0.7033450000000028,nanion,nitrendipine,low,2,['low'],low,correct
+0.25,0.7033450000000028,nanion,pimozide,intermediate,0,['high'],high,over-called
+0.25,0.7033450000000028,nanion,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,nanion,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,nanion,vandetanib,high,0,['high'],high,correct
+0.25,0.7033450000000028,manual,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,manual,azimilide,high,0,['high'],high,correct
+0.25,0.7033450000000028,manual,clarithromycin,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.25,0.7033450000000028,manual,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,manual,disopyramide,high,0,['high'],high,correct
+0.25,0.7033450000000028,manual,domperidone,intermediate,0,"['high', 'intermediate']",high,over-called
+0.25,0.7033450000000028,manual,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,manual,ibutilide,high,0,['high'],high,correct
+0.25,0.7033450000000028,manual,loratadine,low,2,['low'],low,correct
+0.25,0.7033450000000028,manual,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,manual,nifedipine,low,2,['low'],low,correct
+0.25,0.7033450000000028,manual,nitrendipine,low,2,['low'],low,correct
+0.25,0.7033450000000028,manual,pimozide,intermediate,0,['high'],high,over-called
+0.25,0.7033450000000028,manual,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.25,0.7033450000000028,manual,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.25,0.7033450000000028,manual,vandetanib,high,0,"['high', 'intermediate']",high,correct
+0.3,0.7033450000000028,chantest,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,chantest,azimilide,high,0,['high'],high,correct
+0.3,0.7033450000000028,chantest,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,chantest,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,chantest,disopyramide,high,1,"['high', 'intermediate']",high,correct
+0.3,0.7033450000000028,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.3,0.7033450000000028,chantest,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,chantest,ibutilide,high,0,['high'],high,correct
+0.3,0.7033450000000028,chantest,loratadine,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,chantest,metoprolol,low,2,['low'],low,correct
+0.3,0.7033450000000028,chantest,nifedipine,low,2,['low'],low,correct
+0.3,0.7033450000000028,chantest,nitrendipine,low,2,['low'],low,correct
+0.3,0.7033450000000028,chantest,pimozide,intermediate,0,['high'],high,over-called
+0.3,0.7033450000000028,chantest,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,chantest,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,chantest,vandetanib,high,0,['high'],high,correct
+0.3,0.7033450000000028,nanion,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,nanion,azimilide,high,0,['high'],high,correct
+0.3,0.7033450000000028,nanion,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,nanion,disopyramide,high,1,['intermediate'],intermediate,under-triaged
+0.3,0.7033450000000028,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.3,0.7033450000000028,nanion,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,nanion,ibutilide,high,0,['high'],high,correct
+0.3,0.7033450000000028,nanion,loratadine,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,nanion,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,nanion,nifedipine,low,2,['low'],low,correct
+0.3,0.7033450000000028,nanion,nitrendipine,low,2,['low'],low,correct
+0.3,0.7033450000000028,nanion,pimozide,intermediate,0,['high'],high,over-called
+0.3,0.7033450000000028,nanion,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,nanion,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,nanion,vandetanib,high,0,['high'],high,correct
+0.3,0.7033450000000028,manual,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,manual,azimilide,high,0,['high'],high,correct
+0.3,0.7033450000000028,manual,clarithromycin,intermediate,1,"['intermediate', 'low']",intermediate,correct
+0.3,0.7033450000000028,manual,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,manual,disopyramide,high,0,['high'],high,correct
+0.3,0.7033450000000028,manual,domperidone,intermediate,0,"['high', 'intermediate']",high,over-called
+0.3,0.7033450000000028,manual,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,manual,ibutilide,high,0,['high'],high,correct
+0.3,0.7033450000000028,manual,loratadine,low,2,['low'],low,correct
+0.3,0.7033450000000028,manual,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,manual,nifedipine,low,2,['low'],low,correct
+0.3,0.7033450000000028,manual,nitrendipine,low,2,['low'],low,correct
+0.3,0.7033450000000028,manual,pimozide,intermediate,0,['high'],high,over-called
+0.3,0.7033450000000028,manual,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.3,0.7033450000000028,manual,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.3,0.7033450000000028,manual,vandetanib,high,0,"['high', 'intermediate']",high,correct
+0.4,0.45394000000000534,chantest,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,chantest,azimilide,high,0,['high'],high,correct
+0.4,0.45394000000000534,chantest,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,chantest,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,chantest,disopyramide,high,1,[],abstain,abstain
+0.4,0.45394000000000534,chantest,domperidone,intermediate,0,['high'],high,over-called
+0.4,0.45394000000000534,chantest,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,chantest,ibutilide,high,0,['high'],high,correct
+0.4,0.45394000000000534,chantest,loratadine,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,chantest,metoprolol,low,2,['low'],low,correct
+0.4,0.45394000000000534,chantest,nifedipine,low,2,['low'],low,correct
+0.4,0.45394000000000534,chantest,nitrendipine,low,2,['low'],low,correct
+0.4,0.45394000000000534,chantest,pimozide,intermediate,0,['high'],high,over-called
+0.4,0.45394000000000534,chantest,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,chantest,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,chantest,vandetanib,high,0,['high'],high,correct
+0.4,0.45394000000000534,nanion,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,nanion,azimilide,high,0,['high'],high,correct
+0.4,0.45394000000000534,nanion,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,nanion,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,nanion,disopyramide,high,1,['intermediate'],intermediate,under-triaged
+0.4,0.45394000000000534,nanion,domperidone,intermediate,0,['high'],high,over-called
+0.4,0.45394000000000534,nanion,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,nanion,ibutilide,high,0,['high'],high,correct
+0.4,0.45394000000000534,nanion,loratadine,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,nanion,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,nanion,nifedipine,low,2,['low'],low,correct
+0.4,0.45394000000000534,nanion,nitrendipine,low,2,['low'],low,correct
+0.4,0.45394000000000534,nanion,pimozide,intermediate,0,['high'],high,over-called
+0.4,0.45394000000000534,nanion,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,nanion,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,nanion,vandetanib,high,0,['high'],high,correct
+0.4,0.45394000000000534,manual,astemizole,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,manual,azimilide,high,0,['high'],high,correct
+0.4,0.45394000000000534,manual,clarithromycin,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,manual,clozapine,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,manual,disopyramide,high,0,['high'],high,correct
+0.4,0.45394000000000534,manual,domperidone,intermediate,0,['high'],high,over-called
+0.4,0.45394000000000534,manual,droperidol,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,manual,ibutilide,high,0,['high'],high,correct
+0.4,0.45394000000000534,manual,loratadine,low,2,['low'],low,correct
+0.4,0.45394000000000534,manual,metoprolol,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,manual,nifedipine,low,2,['low'],low,correct
+0.4,0.45394000000000534,manual,nitrendipine,low,2,['low'],low,correct
+0.4,0.45394000000000534,manual,pimozide,intermediate,0,['high'],high,over-called
+0.4,0.45394000000000534,manual,risperidone,intermediate,1,['intermediate'],intermediate,correct
+0.4,0.45394000000000534,manual,tamoxifen,low,1,['intermediate'],intermediate,over-called
+0.4,0.45394000000000534,manual,vandetanib,high,0,[],abstain,abstain

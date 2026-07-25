@@ -1,3 +1,11 @@
+> [WARNING] STALE - OLD DATA. All numbers in this file were computed on the pre-`_rev` datasets and are
+> SUPERSEDED. Do not cite, quote, or reuse any figure from this document in the ICCEREC 2026
+> paper. Authoritative numbers come from the `_rev` re-run only.
+
+> ⚠️ STALE — OLD DATA. All numbers in this file were computed on the pre-`_rev` datasets and are
+> SUPERSEDED. Do not cite, quote, or reuse any figure from this document in the ICCEREC 2026
+> paper. Authoritative numbers come from the `_rev` re-run only.
+
 # Project Summary: In-Silico Cardiotoxicity Risk Prediction Ensembles
 
 This document serves as a comprehensive handoff and record of the cardiotoxicity (Torsade de Pointes - TdP) risk prediction project. It outlines the dataset properties, methodology, critical data leakage discovery, performance results, and explainability evidence.
