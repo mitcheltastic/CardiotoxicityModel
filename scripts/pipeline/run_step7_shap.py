@@ -183,13 +183,29 @@ log("=== STEP 5 — FIGURE ===")
 log("==========================================")
 fig, ax = plt.subplots(figsize=(3.5, 3.5))
 
+biomarker_label_map = {
+    'qNet': 'qNet',
+    'dvdtmax': r'$dV_m/dt_{max}$',
+    'vmax': r'$V_{m,peak}$',
+    'vrest': r'$V_{m,rest}$',
+    'APD50': r'APD$_{50}$',
+    'APD90': r'APD$_{90}$',
+    'max_dv': r'$dV_m/dt_{repol}$',
+    'camax': r'Ca$_{peak}$',
+    'carest': r'Ca$_{rest}$',
+    'CaTD50': r'CaD$_{50}$',
+    'CaTD90': r'CaD$_{90}$'
+}
+
 # Sort ascending for horizontal bar chart so highest is on top
 plot_df = gi_df.sort_values(by='mean_abs_shap_aggregated', ascending=True)
 y_pos = np.arange(len(plot_df))
 ax.barh(y_pos, plot_df['mean_abs_shap_aggregated'], color='gray', edgecolor='black')
 ax.set_yticks(y_pos)
-ax.set_yticklabels(plot_df['biomarker'])
-ax.set_xlabel('mean|SHAP|')
+mapped_yticklabels = [biomarker_label_map.get(bm, bm) for bm in plot_df['biomarker']]
+ax.set_yticklabels(mapped_yticklabels, fontsize=8)
+ax.set_xlabel('mean|SHAP|', fontsize=8)
+ax.tick_params(axis='both', labelsize=8)
 
 plt.tight_layout()
 
@@ -203,6 +219,18 @@ size_pdf = os.path.getsize(fig_pdf) / 1024.0
 size_png = os.path.getsize(fig_png) / 1024.0
 log(f"Saved {fig_pdf} ({size_pdf:.1f} KB)")
 log(f"Saved {fig_png} ({size_png:.1f} KB)")
+
+log("\n==========================================")
+log("=== AXIS LABELS AND MEAN|SHAP| VALUES (DESCENDING ORDER) ===")
+log("==========================================")
+plot_df_desc = gi_df.sort_values(by='mean_abs_shap_aggregated', ascending=False)
+log(f"{'Rank':<5} | {'Raw Biomarker':<15} | {'Axis Label':<25} | {'mean|SHAP|':<12}")
+log("-" * 65)
+for idx, row in plot_df_desc.iterrows():
+    raw_bm = row['biomarker']
+    lbl = biomarker_label_map.get(raw_bm, raw_bm)
+    log(f"{row['rank']:<5} | {raw_bm:<15} | {lbl:<25} | {row['mean_abs_shap_aggregated']:.6f}")
+
 
 
 log("\n==========================================")
