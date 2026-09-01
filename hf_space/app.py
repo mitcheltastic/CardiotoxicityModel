@@ -1,11 +1,16 @@
+import os
 import gradio as gr
 import joblib
 import numpy as np
 import shap
 import deploy_utils  # Ensure it is imported so joblib can find custom classes if any
 
-bundle = joblib.load('deployable_chantest_3class.joblib')
-background = joblib.load('shap_background.joblib')
+base_dir = os.path.dirname(os.path.abspath(__file__))
+bundle_path = os.path.join(base_dir, 'deployable_chantest_3class.joblib')
+bg_path = os.path.join(base_dir, 'shap_background.joblib')
+
+bundle = joblib.load(bundle_path)
+background = joblib.load(bg_path)
 explainer = shap.KernelExplainer(bundle['model'].predict_proba, background)
 
 ALPHA = 0.154
@@ -56,10 +61,15 @@ def conformal_from_proba(prob_dict):
 
 features = ['qNet', 'dvdtmax', 'vmax', 'vrest', 'APD50', 'APD90', 'max_dv', 'camax', 'carest', 'CaTD50', 'CaTD90']
 
+def _preprocess(raw):
+    if 'scaler' in bundle and bundle['scaler'] is not None:
+        return bundle['scaler'].transform(raw)
+    return raw
+
 def predict(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90):
     raw = np.array([[qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90]])
-    Xs = bundle['scaler'].transform(raw)
-    pred = bundle['model'].predict(Xs)[0]
+    Xs = _preprocess(raw)
+    pred = int(bundle['model'].predict(Xs)[0])
     proba = bundle['model'].predict_proba(Xs)[0]
     
     classes = [bundle['inverse_class_map'][i] for i in range(len(proba))]
@@ -88,9 +98,9 @@ def predict(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaT
 
 def explain(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90):
     raw = np.array([[qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90]])
-    Xs = bundle['scaler'].transform(raw)
-    pred = bundle['model'].predict(Xs)[0]
-    cls = int(pred)
+    Xs = _preprocess(raw)
+    pred = int(bundle['model'].predict(Xs)[0])
+    cls = pred
     
     sv = explainer.shap_values(Xs, nsamples=500)
     
