@@ -3,7 +3,7 @@
 **Evaluation Target:** `RandomForestClassifier` base learner inside [`hf_space/deployable_chantest_3class.joblib`](file:///d:/1.%20COLLEGE/1.%20HERE%20WE%20GO/8.%20TUGAS%20AKHIR/1.%20RISET%20ML/5.%20Here%20We%20Go%20Bismillah/TrainAI/hf_space/deployable_chantest_3class.joblib) (`bundle['model'].estimators_[0]`).  
 **Verification vs Research Model:** Bit-level equivalence confirmed against `models/chantest_stacking_model_rev.joblib` (`named_estimators_['rf']`).  
 **Random Seed & Bootstrapping:** Seed 42, 10,000 bootstrap iterations for drug-level macro-F1 and CiPA replicate OvR AUCs.  
-**Execution Environment:** `Python 3.11`, CPU: `Intel64 Family 6 Model 186 Stepping 2` (13th Gen Intel Core i7-13620H).  
+**Execution Environment:** `Python 3.12.4 (venv: hf_space/.venv)`, CPU: `Intel64 Family 6 Model 186 Stepping 2` (13th Gen Intel Core i7-13620H).  
 **Evaluation Script:** [`results/cd4_eval/rf/run_eval_rf.py`](file:///d:/1.%20COLLEGE/1.%20HERE%20WE%20GO/8.%20TUGAS%20AKHIR/1.%20RISET%20ML/5.%20Here%20We%20Go%20Bismillah/TrainAI/results/cd4_eval/rf/run_eval_rf.py).
 
 ---
