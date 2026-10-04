@@ -22,8 +22,8 @@ url = upload_folder(
     repo_id='mitcheltastic/tdp-cipa-screening',
     repo_type='space',
     token=token,
-    commit_message='Add per-prediction SHAP /explain endpoint',
-    ignore_patterns=['.venv/*', '__pycache__/*', '.venv']
+    commit_message='Switch to Random Forest with TreeSHAP and rank-11 conformal',
+    ignore_patterns=['.venv/*', '__pycache__/*', '.venv', 'deployable_chantest_3class.joblib', 'shap_background.joblib']
 )
 print("Upload successful!")
 print(f"Commit URL: {url}")

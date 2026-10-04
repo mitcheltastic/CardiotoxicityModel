@@ -6,16 +6,26 @@ import shap
 import deploy_utils  # Ensure it is imported so joblib can find custom classes if any
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
-bundle_path = os.path.join(base_dir, 'deployable_chantest_3class.joblib')
-bg_path = os.path.join(base_dir, 'shap_background.joblib')
+bundle_path = os.path.join(base_dir, 'deployable_chantest_rf.joblib')
 
 bundle = joblib.load(bundle_path)
-background = joblib.load(bg_path)
-explainer = shap.KernelExplainer(bundle['model'].predict_proba, background)
+model = bundle['model']
+explainer = shap.TreeExplainer(model)
 
-ALPHA = 0.154
-Q_HAT = 0.6275
-SEVERITY = {"low": 0, "intermediate": 1, "high": 2}
+EXPECTED_Q_HAT = 0.533987
+EXPECTED_ALPHA = 2.0 / 13.0
+
+Q_HAT = float(bundle.get('q_hat', EXPECTED_Q_HAT))
+ALPHA = float(bundle.get('alpha', EXPECTED_ALPHA))
+
+assert np.isclose(Q_HAT, EXPECTED_Q_HAT, atol=1e-5), f"Q_HAT mismatch: {Q_HAT} vs {EXPECTED_Q_HAT}"
+assert np.isclose(ALPHA, EXPECTED_ALPHA, atol=1e-5), f"ALPHA mismatch: {ALPHA} vs {EXPECTED_ALPHA}"
+
+# Validate and use inverse class map from bundle
+inv_map = bundle['inverse_class_map']
+assert inv_map == {0: "high", 1: "intermediate", 2: "low"}, f"Unexpected inverse_class_map: {inv_map}"
+
+SEVERITY = {"High": 2, "Intermediate": 1, "Low": 0}
 CALIBRATION_NOTE = (
     "Conformal threshold calibrated at drug level on probability\n"
     "vectors averaged over 2000 replicate samples per drug (leave-one-drug-out over 12\n"
@@ -23,43 +33,50 @@ CALIBRATION_NOTE = (
     "guarantee does not strictly transfer to single-row input."
 )
 
+EXPECTED_FEATURES = ['qNet', 'dvdtmax', 'vmax', 'vrest', 'APD50', 'APD90', 'max_dv', 'camax', 'carest', 'CaTD50', 'CaTD90']
+features = list(bundle['biomarkers'])
+assert features == EXPECTED_FEATURES, f"Biomarker feature mismatch: {features} vs {EXPECTED_FEATURES}"
+
+# Verify explainer output shape once at startup
+_test_x = np.zeros((1, len(features)))
+_test_sv = explainer.shap_values(_test_x)
+if isinstance(_test_sv, list):
+    print(f"TreeExplainer initialized. Multi-class SHAP output is a list of {len(_test_sv)} arrays with shape {_test_sv[0].shape}.")
+else:
+    print(f"TreeExplainer initialized. Multi-class SHAP output shape: {_test_sv.shape}")
+
 def conformal_from_proba(prob_dict):
+    # Internal conformal rule uses Title-case
+    proba = {k.capitalize(): float(v) for k, v in prob_dict.items()}
     threshold = 1.0 - Q_HAT
-    included_classes = []
-    for c, p in prob_dict.items():
-        if p >= threshold:
-            included_classes.append(c)
-    included_classes.sort(key=lambda c: SEVERITY[c.lower()], reverse=True)
-    set_size = len(included_classes)
+    pred_set = [t for t in ["High", "Intermediate", "Low"] if proba.get(t, 0.0) >= threshold]
+    set_size = len(pred_set)
     is_ambiguous = set_size > 1
-    
-    if set_size == 0:
-        argmax_class = max(prob_dict, key=prob_dict.get)
-        return {
-            "prediction_set": [],
-            "recommended_action": argmax_class.lower(),
-            "set_size": 0,
-            "is_ambiguous": True,
-            "out_of_distribution": True,
-            "warning": "No class met the conformal threshold. Result is not covered by the guarantee.",
-            "alpha": ALPHA,
-            "q_hat": Q_HAT,
-            "calibration_note": CALIBRATION_NOTE
-        }
-    
-    recommended_action = included_classes[0]
-    return {
-        "prediction_set": included_classes,
-        "recommended_action": recommended_action.lower(),
+
+    if not pred_set:                 # model abstains
+        ood, action = True, "High"   # most conservative tier
+        warning_msg = (
+            "No class met the conformal threshold. Result is not covered by the guarantee. "
+            "The model abstains and recommends High risk monitoring."
+        )
+    else:
+        ood, action = False, pred_set[0]   # ordered by severity
+        warning_msg = None
+
+    # Return prediction_set and recommended_action in lowercase per external API contract
+    result = {
+        "prediction_set": [t.lower() for t in pred_set],
+        "recommended_action": action.lower(),
         "set_size": set_size,
         "is_ambiguous": is_ambiguous,
-        "out_of_distribution": False,
+        "out_of_distribution": ood,
         "alpha": ALPHA,
         "q_hat": Q_HAT,
         "calibration_note": CALIBRATION_NOTE
     }
-
-features = ['qNet', 'dvdtmax', 'vmax', 'vrest', 'APD50', 'APD90', 'max_dv', 'camax', 'carest', 'CaTD50', 'CaTD90']
+    if warning_msg:
+        result["warning"] = warning_msg
+    return result
 
 def _preprocess(raw):
     if 'scaler' in bundle and bundle['scaler'] is not None:
@@ -69,21 +86,21 @@ def _preprocess(raw):
 def predict(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90):
     raw = np.array([[qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90]])
     Xs = _preprocess(raw)
-    pred = int(bundle['model'].predict(Xs)[0])
-    proba = bundle['model'].predict_proba(Xs)[0]
-    
-    classes = [bundle['inverse_class_map'][i] for i in range(len(proba))]
-    prob_dict = {classes[i]: float(proba[i]) for i in range(len(proba))}
-    tier = bundle['inverse_class_map'][pred]
+    proba = model.predict_proba(Xs)[0]
+    pred = int(np.argmax(proba))
+    tier = inv_map[pred]
+
+    # Return prob_dict with lowercase keys matching existing contract
+    prob_dict = {inv_map[i]: float(proba[i]) for i in range(len(proba))}
     legacy_str = f"Predicted Risk Tier: {tier.capitalize()}"
-    
+
     conformal_dict = conformal_from_proba(prob_dict)
-    
+
     if conformal_dict.get("out_of_distribution"):
         ui_str = (
-            f"### ⚠️ WARNING: Out of Distribution\n"
-            f"**{conformal_dict['warning']}**\n\n"
-            f"Fallback Recommended Action: **{conformal_dict['recommended_action'].capitalize()}**"
+            f"### ⚠️ WARNING: Out of Distribution / Model Abstains\n"
+            f"No class met the conformal threshold (1 - q̂ = {1.0 - Q_HAT:.4f}). "
+            f"The model abstains and recommends: **{conformal_dict['recommended_action'].capitalize()}** risk monitoring."
         )
     elif conformal_dict["is_ambiguous"]:
         ui_str = (
@@ -93,49 +110,46 @@ def predict(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaT
         )
     else:
         ui_str = f"### Recommended Action: {conformal_dict['recommended_action'].capitalize()}"
-        
+
     return prob_dict, legacy_str, conformal_dict, ui_str
 
 def explain(qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90):
     raw = np.array([[qNet, dvdtmax, vmax, vrest, APD50, APD90, max_dv, camax, carest, CaTD50, CaTD90]])
     Xs = _preprocess(raw)
-    pred = int(bundle['model'].predict(Xs)[0])
-    cls = pred
-    
-    sv = explainer.shap_values(Xs, nsamples=500)
-    
-    # Handle list of arrays (one per class) OR 3D array
+    proba = model.predict_proba(Xs)[0]
+    cls = int(np.argmax(proba))
+
+    sv = explainer.shap_values(Xs)
+
     if isinstance(sv, list):
-        shap_row = sv[cls][0]
+        contrib = sv[cls][0]
+    elif sv.ndim == 3:
+        contrib = sv[0, :, cls]
     else:
-        if sv.ndim == 3:
-            shap_row = sv[0, :, cls]
-        else:
-            shap_row = sv[0]
-            
-    # expected_value can be a list or array
+        contrib = sv[0]
+
     if isinstance(explainer.expected_value, (list, np.ndarray)):
-        base_value = explainer.expected_value[cls]
+        base_value = float(explainer.expected_value[cls])
     else:
-        base_value = explainer.expected_value
-        
+        base_value = float(explainer.expected_value)
+
     contributions = []
     for i, name in enumerate(features):
         contributions.append({
             "biomarker": name,
             "value": float(raw[0, i]),
-            "shap": float(shap_row[i])
+            "shap": float(contrib[i])
         })
-        
+
     return {
-        "predicted_class": bundle['inverse_class_map'][pred],
+        "predicted_class": inv_map[cls],
         "base_value": float(base_value),
         "contributions": contributions
     }
 
 with gr.Blocks(title="CiPA TdP Risk Classifier") as demo:
     gr.Markdown("# CiPA TdP Risk Classifier")
-    gr.Markdown("Predicts the 3-tier Torsade de Pointes (TdP) risk (High, Intermediate, Low) based on 11 CiPA biomarkers.")
+    gr.Markdown("Predicts the 3-tier Torsade de Pointes (TdP) risk (High, Intermediate, Low) based on 11 CiPA biomarkers (ratio to control).")
     
     with gr.Row():
         with gr.Column():
@@ -152,11 +166,11 @@ with gr.Blocks(title="CiPA TdP Risk Classifier") as demo:
                 
             gr.Examples(
                 examples=[
-                    [43.637118, 72.87939091, 41.82645396, -88.01230706, 338.5000001, 441.25, -0.238296891, 0.000254324, 7.60e-05, 337.4999999, 767.2500001],
-                    [69.60795403, 72.89621306, 41.67183264, -88.01437399, 238, 290, -0.376227947, 0.000239128, 7.45e-05, 301, 726]
+                    [0.62631, 0.99975, 1.003687, -0.999976, 1.422269, 1.521552, -0.631328, 1.063894, 1.02, 1.121262, 1.056818],
+                    [0.918296, 0.999048, 0.990152, -1.000058, 1.115546, 1.14569, -0.838632, 0.937907, 0.99, 1.080565, 1.038912]
                 ],
                 inputs=inputs,
-                label="Example Drugs (High Risk = azimilide, Low Risk = loratadine)"
+                label="Example Drugs (High Risk = azimilide, Intermediate Risk = clarithromycin)"
             )
             
         with gr.Column():
