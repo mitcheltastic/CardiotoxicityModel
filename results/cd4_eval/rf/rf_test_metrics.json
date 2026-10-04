@@ -1,0 +1,752 @@
+{
+  "chantest": {
+    "platform": "chantest",
+    "correct_drugs": "14/16",
+    "drug_macro_f1": 0.8777777777777778,
+    "drug_accuracy": 0.875,
+    "drug_precision": [
+      0.6666666666666666,
+      1.0,
+      1.0
+    ],
+    "drug_recall": [
+      1.0,
+      0.7142857142857143,
+      1.0
+    ],
+    "drug_f1": [
+      0.8,
+      0.8333333333333334,
+      1.0
+    ],
+    "drug_cm": [
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        5,
+        0
+      ],
+      [
+        0,
+        0,
+        5
+      ]
+    ],
+    "misclassifications": [
+      {
+        "drug_name": "domperidone",
+        "true_tier": "intermediate",
+        "pred_tier": "high",
+        "category": "over-call",
+        "prob_high": 0.9997875,
+        "prob_int": 9.875e-05,
+        "prob_low": 0.00011375
+      },
+      {
+        "drug_name": "pimozide",
+        "true_tier": "intermediate",
+        "pred_tier": "high",
+        "category": "over-call",
+        "prob_high": 0.95123625,
+        "prob_int": 0.048745,
+        "prob_low": 1.875e-05
+      }
+    ],
+    "row_macro_f1": 0.8215341108215869,
+    "row_accuracy": 0.81790625,
+    "row_cm": [
+      [
+        7895,
+        1,
+        104
+      ],
+      [
+        4019,
+        9149,
+        832
+      ],
+      [
+        0,
+        871,
+        9129
+      ]
+    ],
+    "ordinal_auc_drug": {
+      "risk_gt_low": 1.0,
+      "risk_gt_int": 0.9166666666666667
+    },
+    "ordinal_auc_row": {
+      "risk_gt_low": 0.9870542636363637,
+      "risk_gt_int": 0.8773791510416667
+    },
+    "drug_bootstrap_macro_f1": {
+      "median": 0.875,
+      "ci_low": 0.6866096866096866,
+      "ci_high": 1.0,
+      "ci_str": "0.875000 [0.686610, 1.000000]"
+    },
+    "cipa_bootstrap_ovr_auc": {
+      "High": {
+        "median": 0.875,
+        "ci_low": 0.8541666666666666,
+        "ci_high": 0.9375,
+        "str": "0.875 (0.854-0.938)"
+      },
+      "Int": {
+        "median": 0.746031746031746,
+        "ci_low": 0.6825396825396826,
+        "ci_high": 0.873015873015873,
+        "str": "0.746 (0.683-0.873)"
+      },
+      "Low": {
+        "median": 1.0,
+        "ci_low": 0.9272727272727272,
+        "ci_high": 1.0,
+        "str": "1.000 (0.927-1.000)"
+      }
+    },
+    "drug_summary": [
+      {
+        "drug_name": "astemizole",
+        "true_label": 1,
+        "prob_high": 0.006555,
+        "prob_int": 0.9934412499999999,
+        "prob_low": 3.7499999999999997e-06,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "azimilide",
+        "true_label": 0,
+        "prob_high": 0.9999975,
+        "prob_int": 1.25e-06,
+        "prob_low": 1.25e-06,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "clarithromycin",
+        "true_label": 1,
+        "prob_high": 0.00021625,
+        "prob_int": 0.99752125,
+        "prob_low": 0.0022625,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "clozapine",
+        "true_label": 1,
+        "prob_high": 2.5e-06,
+        "prob_int": 0.9369587500000001,
+        "prob_low": 0.06303875,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "disopyramide",
+        "true_label": 0,
+        "prob_high": 0.6852837500000001,
+        "prob_int": 0.1548425,
+        "prob_low": 0.15987375,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "domperidone",
+        "true_label": 1,
+        "prob_high": 0.9997875,
+        "prob_int": 9.875e-05,
+        "prob_low": 0.00011375,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "droperidol",
+        "true_label": 1,
+        "prob_high": 0.0673075,
+        "prob_int": 0.9325225,
+        "prob_low": 0.00017,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "ibutilide",
+        "true_label": 0,
+        "prob_high": 0.99872625,
+        "prob_int": 0.00037875,
+        "prob_low": 0.0008950000000000001,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "loratadine",
+        "true_label": 2,
+        "prob_high": 0.0,
+        "prob_int": 0.077575,
+        "prob_low": 0.9224249999999999,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "metoprolol",
+        "true_label": 2,
+        "prob_high": 0.0001825,
+        "prob_int": 0.34467125,
+        "prob_low": 0.65514625,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "nifedipine",
+        "true_label": 2,
+        "prob_high": 0.00134375,
+        "prob_int": 0.009938750000000001,
+        "prob_low": 0.9887175,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "nitrendipine",
+        "true_label": 2,
+        "prob_high": 0.0,
+        "prob_int": 0.02910625,
+        "prob_low": 0.97089375,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "pimozide",
+        "true_label": 1,
+        "prob_high": 0.95123625,
+        "prob_int": 0.048745,
+        "prob_low": 1.875e-05,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "risperidone",
+        "true_label": 1,
+        "prob_high": 0.0,
+        "prob_int": 0.6842125,
+        "prob_low": 0.31578749999999994,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "tamoxifen",
+        "true_label": 2,
+        "prob_high": 2.5e-06,
+        "prob_int": 0.383595,
+        "prob_low": 0.6164025000000001,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "vandetanib",
+        "true_label": 0,
+        "prob_high": 0.99300625,
+        "prob_int": 0.0029625,
+        "prob_low": 0.00403125,
+        "pred_label": 0
+      }
+    ]
+  },
+  "nanion": {
+    "platform": "nanion",
+    "correct_drugs": "13/16",
+    "drug_macro_f1": 0.8193732193732194,
+    "drug_accuracy": 0.8125,
+    "drug_precision": [
+      0.6666666666666666,
+      0.8333333333333334,
+      1.0
+    ],
+    "drug_recall": [
+      1.0,
+      0.7142857142857143,
+      0.8
+    ],
+    "drug_f1": [
+      0.8,
+      0.7692307692307693,
+      0.8888888888888888
+    ],
+    "drug_cm": [
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        5,
+        0
+      ],
+      [
+        0,
+        1,
+        4
+      ]
+    ],
+    "misclassifications": [
+      {
+        "drug_name": "domperidone",
+        "true_tier": "intermediate",
+        "pred_tier": "high",
+        "category": "over-call",
+        "prob_high": 1.0,
+        "prob_int": 0.0,
+        "prob_low": 0.0
+      },
+      {
+        "drug_name": "metoprolol",
+        "true_tier": "low",
+        "pred_tier": "intermediate",
+        "category": "over-call",
+        "prob_high": 0.00084875,
+        "prob_int": 0.88023125,
+        "prob_low": 0.11892
+      },
+      {
+        "drug_name": "pimozide",
+        "true_tier": "intermediate",
+        "pred_tier": "high",
+        "category": "over-call",
+        "prob_high": 0.9518075,
+        "prob_int": 0.048185000000000006,
+        "prob_low": 7.499999999999999e-06
+      }
+    ],
+    "row_macro_f1": 0.7734523292217643,
+    "row_accuracy": 0.767125,
+    "row_cm": [
+      [
+        7999,
+        1,
+        0
+      ],
+      [
+        4056,
+        8763,
+        1181
+      ],
+      [
+        1,
+        2213,
+        7786
+      ]
+    ],
+    "ordinal_auc_drug": {
+      "risk_gt_low": 0.9636363636363637,
+      "risk_gt_int": 0.8958333333333334
+    },
+    "ordinal_auc_row": {
+      "risk_gt_low": 0.9355518613636364,
+      "risk_gt_int": 0.8824082812499999
+    },
+    "drug_bootstrap_macro_f1": {
+      "median": 0.8111111111111112,
+      "ci_low": 0.5760683760683761,
+      "ci_high": 1.0,
+      "ci_str": "0.811111 [0.576068, 1.000000]"
+    },
+    "cipa_bootstrap_ovr_auc": {
+      "High": {
+        "median": 0.875,
+        "ci_low": 0.8541666666666666,
+        "ci_high": 0.9375,
+        "str": "0.875 (0.854-0.938)"
+      },
+      "Int": {
+        "median": 0.7222222222222222,
+        "ci_low": 0.6428571428571429,
+        "ci_high": 0.8333333333333334,
+        "str": "0.722 (0.643-0.833)"
+      },
+      "Low": {
+        "median": 0.9454545454545454,
+        "ci_low": 0.8363636363636363,
+        "ci_high": 1.0,
+        "str": "0.945 (0.836-1.000)"
+      }
+    },
+    "drug_summary": [
+      {
+        "drug_name": "astemizole",
+        "true_label": 1,
+        "prob_high": 0.006542500000000001,
+        "prob_int": 0.99345375,
+        "prob_low": 3.7499999999999997e-06,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "azimilide",
+        "true_label": 0,
+        "prob_high": 0.9999975,
+        "prob_int": 1.25e-06,
+        "prob_low": 1.25e-06,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "clarithromycin",
+        "true_label": 1,
+        "prob_high": 6.25e-06,
+        "prob_int": 0.7647425,
+        "prob_low": 0.23525125,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "clozapine",
+        "true_label": 1,
+        "prob_high": 3.7499999999999997e-06,
+        "prob_int": 0.9757224999999999,
+        "prob_low": 0.02427375,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "disopyramide",
+        "true_label": 0,
+        "prob_high": 0.7537437499999999,
+        "prob_int": 0.19779125,
+        "prob_low": 0.048465,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "domperidone",
+        "true_label": 1,
+        "prob_high": 1.0,
+        "prob_int": 0.0,
+        "prob_low": 0.0,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "droperidol",
+        "true_label": 1,
+        "prob_high": 0.08200375,
+        "prob_int": 0.9177525000000001,
+        "prob_low": 0.00024375,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "ibutilide",
+        "true_label": 0,
+        "prob_high": 0.9983150000000001,
+        "prob_int": 0.00058375,
+        "prob_low": 0.00110125,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "loratadine",
+        "true_label": 2,
+        "prob_high": 0.0,
+        "prob_int": 0.0696725,
+        "prob_low": 0.9303275,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "metoprolol",
+        "true_label": 2,
+        "prob_high": 0.00084875,
+        "prob_int": 0.88023125,
+        "prob_low": 0.11892,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "nifedipine",
+        "true_label": 2,
+        "prob_high": 0.0075,
+        "prob_int": 0.0116325,
+        "prob_low": 0.9808675000000001,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "nitrendipine",
+        "true_label": 2,
+        "prob_high": 0.0,
+        "prob_int": 0.00250875,
+        "prob_low": 0.99749125,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "pimozide",
+        "true_label": 1,
+        "prob_high": 0.9518075,
+        "prob_int": 0.048185000000000006,
+        "prob_low": 7.499999999999999e-06,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "risperidone",
+        "true_label": 1,
+        "prob_high": 0.0,
+        "prob_int": 0.68896125,
+        "prob_low": 0.31103875,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "tamoxifen",
+        "true_label": 2,
+        "prob_high": 3.7499999999999997e-06,
+        "prob_int": 0.37109375,
+        "prob_low": 0.6289025,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "vandetanib",
+        "true_label": 0,
+        "prob_high": 0.9910275000000001,
+        "prob_int": 0.00063125,
+        "prob_low": 0.00834125,
+        "pred_label": 0
+      }
+    ]
+  },
+  "manual": {
+    "platform": "manual",
+    "correct_drugs": "12/16",
+    "drug_macro_f1": 0.7555555555555555,
+    "drug_accuracy": 0.75,
+    "drug_precision": [
+      0.6666666666666666,
+      0.8,
+      0.8
+    ],
+    "drug_recall": [
+      1.0,
+      0.5714285714285714,
+      0.8
+    ],
+    "drug_f1": [
+      0.8,
+      0.6666666666666666,
+      0.8
+    ],
+    "drug_cm": [
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        2,
+        4,
+        1
+      ],
+      [
+        0,
+        1,
+        4
+      ]
+    ],
+    "misclassifications": [
+      {
+        "drug_name": "clarithromycin",
+        "true_tier": "intermediate",
+        "pred_tier": "low",
+        "category": "under-triage",
+        "prob_high": 0.0,
+        "prob_int": 0.47640750000000004,
+        "prob_low": 0.5235925
+      },
+      {
+        "drug_name": "domperidone",
+        "true_tier": "intermediate",
+        "pred_tier": "high",
+        "category": "over-call",
+        "prob_high": 0.9037050000000001,
+        "prob_int": 0.0014525000000000002,
+        "prob_low": 0.0948425
+      },
+      {
+        "drug_name": "metoprolol",
+        "true_tier": "low",
+        "pred_tier": "intermediate",
+        "category": "over-call",
+        "prob_high": 0.19376875000000002,
+        "prob_int": 0.621135,
+        "prob_low": 0.18509625
+      },
+      {
+        "drug_name": "pimozide",
+        "true_tier": "intermediate",
+        "pred_tier": "high",
+        "category": "over-call",
+        "prob_high": 0.8241499999999999,
+        "prob_int": 0.006868750000000001,
+        "prob_low": 0.16898125
+      }
+    ],
+    "row_macro_f1": 0.7375761988096915,
+    "row_accuracy": 0.7327103971999125,
+    "row_cm": [
+      [
+        7924,
+        0,
+        75
+      ],
+      [
+        4026,
+        7752,
+        2222
+      ],
+      [
+        212,
+        2018,
+        7770
+      ]
+    ],
+    "ordinal_auc_drug": {
+      "risk_gt_low": 0.9454545454545455,
+      "risk_gt_int": 0.9583333333333334
+    },
+    "ordinal_auc_row": {
+      "risk_gt_low": 0.9324864675667075,
+      "risk_gt_int": 0.9513672698670667
+    },
+    "drug_bootstrap_macro_f1": {
+      "median": 0.7444444444444445,
+      "ci_low": 0.5045454545454545,
+      "ci_high": 0.9407407407407407,
+      "ci_str": "0.744444 [0.504545, 0.940741]"
+    },
+    "cipa_bootstrap_ovr_auc": {
+      "High": {
+        "median": 0.9583333333333334,
+        "ci_low": 0.8958333333333334,
+        "ci_high": 1.0,
+        "str": "0.958 (0.896-1.000)"
+      },
+      "Int": {
+        "median": 0.7301587301587301,
+        "ci_low": 0.6428571428571429,
+        "ci_high": 0.8333333333333334,
+        "str": "0.730 (0.643-0.833)"
+      },
+      "Low": {
+        "median": 0.9272727272727272,
+        "ci_low": 0.8545454545454545,
+        "ci_high": 1.0,
+        "str": "0.927 (0.855-1.000)"
+      }
+    },
+    "drug_summary": [
+      {
+        "drug_name": "astemizole",
+        "true_label": 1,
+        "prob_high": 0.00958875,
+        "prob_int": 0.99038,
+        "prob_low": 3.125e-05,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "azimilide",
+        "true_label": 0,
+        "prob_high": 0.99315625,
+        "prob_int": 0.00286125,
+        "prob_low": 0.0039825,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "clarithromycin",
+        "true_label": 1,
+        "prob_high": 0.0,
+        "prob_int": 0.47640750000000004,
+        "prob_low": 0.5235925,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "clozapine",
+        "true_label": 1,
+        "prob_high": 2.5e-06,
+        "prob_int": 0.94197875,
+        "prob_low": 0.058018749999999994,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "disopyramide",
+        "true_label": 0,
+        "prob_high": 0.725245,
+        "prob_int": 0.0126325,
+        "prob_low": 0.2621225,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "domperidone",
+        "true_label": 1,
+        "prob_high": 0.9037050000000001,
+        "prob_int": 0.0014525000000000002,
+        "prob_low": 0.0948425,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "droperidol",
+        "true_label": 1,
+        "prob_high": 0.0968325,
+        "prob_int": 0.9030825,
+        "prob_low": 8.5e-05,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "ibutilide",
+        "true_label": 0,
+        "prob_high": 0.9972923961980991,
+        "prob_int": 0.0010542771385692847,
+        "prob_low": 0.001653326663331666,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "loratadine",
+        "true_label": 2,
+        "prob_high": 0.0,
+        "prob_int": 0.09808499999999999,
+        "prob_low": 0.9019149999999999,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "metoprolol",
+        "true_label": 2,
+        "prob_high": 0.19376875000000002,
+        "prob_int": 0.621135,
+        "prob_low": 0.18509625,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "nifedipine",
+        "true_label": 2,
+        "prob_high": 0.007498749999999999,
+        "prob_int": 0.0112575,
+        "prob_low": 0.98124375,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "nitrendipine",
+        "true_label": 2,
+        "prob_high": 0.00077125,
+        "prob_int": 0.0040750000000000005,
+        "prob_low": 0.9951537500000001,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "pimozide",
+        "true_label": 1,
+        "prob_high": 0.8241499999999999,
+        "prob_int": 0.006868750000000001,
+        "prob_low": 0.16898125,
+        "pred_label": 0
+      },
+      {
+        "drug_name": "risperidone",
+        "true_label": 1,
+        "prob_high": 2.5e-06,
+        "prob_int": 0.61551625,
+        "prob_low": 0.38448125,
+        "pred_label": 1
+      },
+      {
+        "drug_name": "tamoxifen",
+        "true_label": 2,
+        "prob_high": 0.0,
+        "prob_int": 0.3173125,
+        "prob_low": 0.6826875,
+        "pred_label": 2
+      },
+      {
+        "drug_name": "vandetanib",
+        "true_label": 0,
+        "prob_high": 0.96039125,
+        "prob_int": 0.0001225,
+        "prob_low": 0.03948625,
+        "pred_label": 0
+      }
+    ]
+  }
+}

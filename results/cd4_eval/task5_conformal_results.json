@@ -1,0 +1,1451 @@
+{
+  "lodo_scores_table": [
+    {
+      "drug_name": "verapamil",
+      "true_class": "low",
+      "true_class_idx": 2,
+      "prob_high": 0.011784209403933264,
+      "prob_int": 0.008871560974013844,
+      "prob_low": 0.9793442296220539,
+      "s_d": 0.02065577037794608,
+      "rank": 1
+    },
+    {
+      "drug_name": "bepridil",
+      "true_class": "high",
+      "true_class_idx": 0,
+      "prob_high": 0.9716677211527852,
+      "prob_int": 0.028331273872884068,
+      "prob_low": 1.0049743340547105e-06,
+      "s_d": 0.028332278847214787,
+      "rank": 2
+    },
+    {
+      "drug_name": "dofetilide",
+      "true_class": "high",
+      "true_class_idx": 0,
+      "prob_high": 0.9268826193495914,
+      "prob_int": 0.07311102988343593,
+      "prob_low": 6.350766965071457e-06,
+      "s_d": 0.07311738065040863,
+      "rank": 3
+    },
+    {
+      "drug_name": "quinidine",
+      "true_class": "high",
+      "true_class_idx": 0,
+      "prob_high": 0.9220145977292079,
+      "prob_int": 0.06273211704187283,
+      "prob_low": 0.015253285228938524,
+      "s_d": 0.07798540227079209,
+      "rank": 4
+    },
+    {
+      "drug_name": "cisapride",
+      "true_class": "intermediate",
+      "true_class_idx": 1,
+      "prob_high": 0.03019435363880694,
+      "prob_int": 0.8722264149384351,
+      "prob_low": 0.09757923142275281,
+      "s_d": 0.1277735850615649,
+      "rank": 5
+    },
+    {
+      "drug_name": "mexiletine",
+      "true_class": "low",
+      "true_class_idx": 2,
+      "prob_high": 0.012329303498856034,
+      "prob_int": 0.13839893239933065,
+      "prob_low": 0.8492717641018093,
+      "s_d": 0.15072823589819073,
+      "rank": 6
+    },
+    {
+      "drug_name": "sotalol",
+      "true_class": "high",
+      "true_class_idx": 0,
+      "prob_high": 0.7270948219280897,
+      "prob_int": 0.2504386591777194,
+      "prob_low": 0.022466518894191212,
+      "s_d": 0.2729051780719103,
+      "rank": 7
+    },
+    {
+      "drug_name": "ranolazine",
+      "true_class": "low",
+      "true_class_idx": 2,
+      "prob_high": 0.04360735504606363,
+      "prob_int": 0.23365027502422397,
+      "prob_low": 0.7227423699297125,
+      "s_d": 0.2772576300702875,
+      "rank": 8
+    },
+    {
+      "drug_name": "terfenadine",
+      "true_class": "intermediate",
+      "true_class_idx": 1,
+      "prob_high": 0.08543322429644072,
+      "prob_int": 0.7053068957701523,
+      "prob_low": 0.20925987993340991,
+      "s_d": 0.29469310422984774,
+      "rank": 9
+    },
+    {
+      "drug_name": "chlorpromazine",
+      "true_class": "intermediate",
+      "true_class_idx": 1,
+      "prob_high": 0.03309141868736421,
+      "prob_int": 0.5713259531268112,
+      "prob_low": 0.39558262818582424,
+      "s_d": 0.4286740468731888,
+      "rank": 10
+    },
+    {
+      "drug_name": "ondansetron",
+      "true_class": "intermediate",
+      "true_class_idx": 1,
+      "prob_high": 0.40959036087849754,
+      "prob_int": 0.3515794124491382,
+      "prob_low": 0.23883022667236323,
+      "s_d": 0.6484205875508617,
+      "rank": 11
+    },
+    {
+      "drug_name": "diltiazem",
+      "true_class": "low",
+      "true_class_idx": 2,
+      "prob_high": 0.04057467159209129,
+      "prob_int": 0.9413591006176458,
+      "prob_low": 0.018066227790254484,
+      "s_d": 0.9819337722097455,
+      "rank": 12
+    }
+  ],
+  "recalibrated_rank11": {
+    "q_hat": 0.6484205875508617,
+    "alpha": 0.15384615384615385,
+    "nominal_coverage": 0.8461538461538461,
+    "inclusion_threshold": 0.35157941244913826,
+    "rank_11_drug": "ondansetron"
+  },
+  "test_evaluation_recalibrated": {
+    "chantest": {
+      "empirical_coverage": 0.875,
+      "covered_count": "14/16",
+      "avg_set_size": 1.0625,
+      "num_ambiguous": 1,
+      "num_empty_ood": 0,
+      "num_under_triage": 0,
+      "drug_details": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        }
+      ]
+    },
+    "nanion": {
+      "empirical_coverage": 0.8125,
+      "covered_count": "13/16",
+      "avg_set_size": 1.125,
+      "num_ambiguous": 2,
+      "num_empty_ood": 0,
+      "num_under_triage": 0,
+      "drug_details": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        }
+      ]
+    },
+    "manual": {
+      "empirical_coverage": 0.75,
+      "covered_count": "12/16",
+      "avg_set_size": 1.0625,
+      "num_ambiguous": 1,
+      "num_empty_ood": 0,
+      "num_under_triage": 1,
+      "drug_details": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "under-triaged",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        }
+      ]
+    }
+  },
+  "test_evaluation_hardcoded_06275": {
+    "chantest": {
+      "empirical_coverage": 0.875,
+      "covered_count": "14/16",
+      "avg_set_size": 1.0625,
+      "num_ambiguous": 1,
+      "num_empty_ood": 0,
+      "num_under_triage": 0,
+      "drug_details": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        }
+      ]
+    },
+    "nanion": {
+      "empirical_coverage": 0.8125,
+      "covered_count": "13/16",
+      "avg_set_size": 1.125,
+      "num_ambiguous": 2,
+      "num_empty_ood": 0,
+      "num_under_triage": 0,
+      "drug_details": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        }
+      ]
+    },
+    "manual": {
+      "empirical_coverage": 0.75,
+      "covered_count": "12/16",
+      "avg_set_size": 1.0625,
+      "num_ambiguous": 1,
+      "num_empty_ood": 0,
+      "num_under_triage": 1,
+      "drug_details": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "under-triaged",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-called",
+          "is_covered": false,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true,
+          "is_empty": false,
+          "is_ambiguous": false
+        }
+      ]
+    }
+  }
+}

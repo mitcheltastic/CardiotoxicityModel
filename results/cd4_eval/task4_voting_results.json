@@ -1,0 +1,1296 @@
+{
+  "deployed_base": {
+    "chantest": {
+      "platform": "chantest",
+      "soft_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9998793161541223,
+            "prob_int": 6.244414637132195e-05,
+            "prob_low": 5.824325151622589e-05
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9504336586750205,
+            "prob_int": 0.04955087437346725,
+            "prob_low": 1.547012505576504e-05
+          },
+          {
+            "drug_name": "tamoxifen",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0003980821508742178,
+            "prob_int": 0.5039652376241424,
+            "prob_low": 0.4956366784792313
+          }
+        ],
+        "row_macro_f1": 0.8218543161986521,
+        "row_accuracy": 0.81590625,
+        "row_cm": [
+          [
+            7883,
+            82,
+            35
+          ],
+          [
+            3997,
+            9753,
+            250
+          ],
+          [
+            0,
+            1527,
+            8473
+          ]
+        ],
+        "ordinal_auc_drug": {
+          "risk_gt_low": 1.0,
+          "risk_gt_int": 0.9166666666666667
+        },
+        "ordinal_auc_row": {
+          "risk_gt_low": 0.9897608977272727,
+          "risk_gt_int": 0.888071875
+        },
+        "drug_bootstrap_macro_f1": {
+          "median": 0.8119658119658121,
+          "ci_low": 0.5760683760683761,
+          "ci_high": 1.0,
+          "ci_str": "0.811966 [0.576068, 1.000000]"
+        },
+        "cipa_bootstrap_ovr_auc": {
+          "High": {
+            "median": 0.875,
+            "ci_low": 0.8541666666666666,
+            "ci_high": 0.9375,
+            "str": "0.875 (0.854-0.938)"
+          },
+          "Int": {
+            "median": 0.7777777777777778,
+            "ci_low": 0.7142857142857143,
+            "ci_high": 0.8888888888888888,
+            "str": "0.778 (0.714-0.889)"
+          },
+          "Low": {
+            "median": 1.0,
+            "ci_low": 0.9454545454545454,
+            "ci_high": 1.0,
+            "str": "1.000 (0.945-1.000)"
+          }
+        }
+      },
+      "hard_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9998793161541223,
+            "prob_int": 6.244414637132195e-05,
+            "prob_low": 5.824325151622589e-05
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9504336586750205,
+            "prob_int": 0.04955087437346725,
+            "prob_low": 1.547012505576504e-05
+          },
+          {
+            "drug_name": "tamoxifen",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0003980821508742178,
+            "prob_int": 0.5039652376241424,
+            "prob_low": 0.4956366784792313
+          }
+        ],
+        "row_macro_f1": 0.8218543161986521,
+        "row_accuracy": 0.81590625,
+        "row_cm": [
+          [
+            7883,
+            82,
+            35
+          ],
+          [
+            3997,
+            9753,
+            250
+          ],
+          [
+            0,
+            1527,
+            8473
+          ]
+        ],
+        "identical_to_soft_row": true,
+        "identical_to_soft_drug": true
+      }
+    },
+    "nanion": {
+      "platform": "nanion",
+      "soft_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.999989529311657,
+            "prob_int": 9.367714298377905e-06,
+            "prob_low": 1.1080741061277877e-06
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0007434360767299517,
+            "prob_int": 0.8842974733652735,
+            "prob_low": 0.11495908885011609
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9510415979502627,
+            "prob_int": 0.04894454245656519,
+            "prob_low": 1.3863630470129919e-05
+          }
+        ],
+        "row_macro_f1": 0.7692710348544258,
+        "row_accuracy": 0.76246875,
+        "row_cm": [
+          [
+            7973,
+            27,
+            0
+          ],
+          [
+            4017,
+            9368,
+            615
+          ],
+          [
+            1,
+            2941,
+            7058
+          ]
+        ],
+        "ordinal_auc_drug": {
+          "risk_gt_low": 0.9636363636363637,
+          "risk_gt_int": 0.9166666666666667
+        },
+        "ordinal_auc_row": {
+          "risk_gt_low": 0.9490095636363636,
+          "risk_gt_int": 0.8948113541666667
+        },
+        "drug_bootstrap_macro_f1": {
+          "median": 0.8111111111111112,
+          "ci_low": 0.5760683760683761,
+          "ci_high": 1.0,
+          "ci_str": "0.811111 [0.576068, 1.000000]"
+        },
+        "cipa_bootstrap_ovr_auc": {
+          "High": {
+            "median": 0.875,
+            "ci_low": 0.8643229166666669,
+            "ci_high": 0.9583333333333334,
+            "str": "0.875 (0.864-0.958)"
+          },
+          "Int": {
+            "median": 0.7619047619047619,
+            "ci_low": 0.6666666666666666,
+            "ci_high": 0.8571428571428571,
+            "str": "0.762 (0.667-0.857)"
+          },
+          "Low": {
+            "median": 0.9454545454545454,
+            "ci_low": 0.8727272727272727,
+            "ci_high": 1.0,
+            "str": "0.945 (0.873-1.000)"
+          }
+        }
+      },
+      "hard_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.999989529311657,
+            "prob_int": 9.367714298377905e-06,
+            "prob_low": 1.1080741061277877e-06
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0007434360767299517,
+            "prob_int": 0.8842974733652735,
+            "prob_low": 0.11495908885011609
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9510415979502627,
+            "prob_int": 0.04894454245656519,
+            "prob_low": 1.3863630470129919e-05
+          }
+        ],
+        "row_macro_f1": 0.7692710348544258,
+        "row_accuracy": 0.76246875,
+        "row_cm": [
+          [
+            7973,
+            27,
+            0
+          ],
+          [
+            4017,
+            9368,
+            615
+          ],
+          [
+            1,
+            2941,
+            7058
+          ]
+        ],
+        "identical_to_soft_row": true,
+        "identical_to_soft_drug": true
+      }
+    },
+    "manual": {
+      "platform": "manual",
+      "soft_voting": {
+        "correct_drugs": "12/16",
+        "drug_macro_f1": 0.7555555555555555,
+        "drug_accuracy": 0.75,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8,
+          0.8
+        ],
+        "drug_recall": [
+          1.0,
+          0.5714285714285714,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.6666666666666666,
+          0.8
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            4,
+            1
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "clarithromycin",
+            "true_tier": "intermediate",
+            "pred_tier": "low",
+            "category": "under-triage",
+            "prob_high": 0.00015811291210900437,
+            "prob_int": 0.49255196573299553,
+            "prob_low": 0.507289922069789
+          },
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9509311065086722,
+            "prob_int": 0.0007361680710540168,
+            "prob_low": 0.048332708056449195
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.24045446138896515,
+            "prob_int": 0.6669039819693398,
+            "prob_low": 0.09264155401141456
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.887770407725465,
+            "prob_int": 0.0034676437461934714,
+            "prob_low": 0.10876194287363374
+          }
+        ],
+        "row_macro_f1": 0.739218134718687,
+        "row_accuracy": 0.7341166911465983,
+        "row_cm": [
+          [
+            7989,
+            0,
+            10
+          ],
+          [
+            4047,
+            8367,
+            1586
+          ],
+          [
+            397,
+            2468,
+            7135
+          ]
+        ],
+        "ordinal_auc_drug": {
+          "risk_gt_low": 0.9272727272727274,
+          "risk_gt_int": 0.9583333333333334
+        },
+        "ordinal_auc_row": {
+          "risk_gt_low": 0.9329675144324743,
+          "risk_gt_int": 0.9527109456390381
+        },
+        "drug_bootstrap_macro_f1": {
+          "median": 0.7444444444444445,
+          "ci_low": 0.5045454545454545,
+          "ci_high": 0.9407407407407407,
+          "ci_str": "0.744444 [0.504545, 0.940741]"
+        },
+        "cipa_bootstrap_ovr_auc": {
+          "High": {
+            "median": 0.9583333333333334,
+            "ci_low": 0.8958333333333334,
+            "ci_high": 1.0,
+            "str": "0.958 (0.896-1.000)"
+          },
+          "Int": {
+            "median": 0.746031746031746,
+            "ci_low": 0.6507936507936508,
+            "ci_high": 0.8412698412698413,
+            "str": "0.746 (0.651-0.841)"
+          },
+          "Low": {
+            "median": 0.9272727272727272,
+            "ci_low": 0.8545454545454545,
+            "ci_high": 1.0,
+            "str": "0.927 (0.855-1.000)"
+          }
+        }
+      },
+      "hard_voting": {
+        "correct_drugs": "12/16",
+        "drug_macro_f1": 0.7555555555555555,
+        "drug_accuracy": 0.75,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8,
+          0.8
+        ],
+        "drug_recall": [
+          1.0,
+          0.5714285714285714,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.6666666666666666,
+          0.8
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            4,
+            1
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "clarithromycin",
+            "true_tier": "intermediate",
+            "pred_tier": "low",
+            "category": "under-triage",
+            "prob_high": 0.00015811291210900437,
+            "prob_int": 0.49255196573299553,
+            "prob_low": 0.507289922069789
+          },
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9509311065086722,
+            "prob_int": 0.0007361680710540168,
+            "prob_low": 0.048332708056449195
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.24045446138896515,
+            "prob_int": 0.6669039819693398,
+            "prob_low": 0.09264155401141456
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.887770407725465,
+            "prob_int": 0.0034676437461934714,
+            "prob_low": 0.10876194287363374
+          }
+        ],
+        "row_macro_f1": 0.739218134718687,
+        "row_accuracy": 0.7341166911465983,
+        "row_cm": [
+          [
+            7989,
+            0,
+            10
+          ],
+          [
+            4047,
+            8367,
+            1586
+          ],
+          [
+            397,
+            2468,
+            7135
+          ]
+        ],
+        "identical_to_soft_row": true,
+        "identical_to_soft_drug": true
+      }
+    }
+  },
+  "research_base": {
+    "chantest": {
+      "platform": "chantest",
+      "soft_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9998793161541223,
+            "prob_int": 6.244414637132195e-05,
+            "prob_low": 5.824325151622589e-05
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9504336586750205,
+            "prob_int": 0.04955087437346725,
+            "prob_low": 1.547012505576504e-05
+          },
+          {
+            "drug_name": "tamoxifen",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0003980821508742178,
+            "prob_int": 0.5039652376241424,
+            "prob_low": 0.4956366784792313
+          }
+        ],
+        "row_macro_f1": 0.8218543161986521,
+        "row_accuracy": 0.81590625,
+        "row_cm": [
+          [
+            7883,
+            82,
+            35
+          ],
+          [
+            3997,
+            9753,
+            250
+          ],
+          [
+            0,
+            1527,
+            8473
+          ]
+        ],
+        "ordinal_auc_drug": {
+          "risk_gt_low": 1.0,
+          "risk_gt_int": 0.9166666666666667
+        },
+        "ordinal_auc_row": {
+          "risk_gt_low": 0.9897608977272727,
+          "risk_gt_int": 0.888071875
+        },
+        "drug_bootstrap_macro_f1": {
+          "median": 0.8119658119658121,
+          "ci_low": 0.5760683760683761,
+          "ci_high": 1.0,
+          "ci_str": "0.811966 [0.576068, 1.000000]"
+        },
+        "cipa_bootstrap_ovr_auc": {
+          "High": {
+            "median": 0.875,
+            "ci_low": 0.8541666666666666,
+            "ci_high": 0.9375,
+            "str": "0.875 (0.854-0.938)"
+          },
+          "Int": {
+            "median": 0.7777777777777778,
+            "ci_low": 0.7142857142857143,
+            "ci_high": 0.8888888888888888,
+            "str": "0.778 (0.714-0.889)"
+          },
+          "Low": {
+            "median": 1.0,
+            "ci_low": 0.9454545454545454,
+            "ci_high": 1.0,
+            "str": "1.000 (0.945-1.000)"
+          }
+        }
+      },
+      "hard_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9998793161541223,
+            "prob_int": 6.244414637132195e-05,
+            "prob_low": 5.824325151622589e-05
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9504336586750205,
+            "prob_int": 0.04955087437346725,
+            "prob_low": 1.547012505576504e-05
+          },
+          {
+            "drug_name": "tamoxifen",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0003980821508742178,
+            "prob_int": 0.5039652376241424,
+            "prob_low": 0.4956366784792313
+          }
+        ],
+        "row_macro_f1": 0.8218543161986521,
+        "row_accuracy": 0.81590625,
+        "row_cm": [
+          [
+            7883,
+            82,
+            35
+          ],
+          [
+            3997,
+            9753,
+            250
+          ],
+          [
+            0,
+            1527,
+            8473
+          ]
+        ],
+        "identical_to_soft_row": true,
+        "identical_to_soft_drug": true
+      }
+    },
+    "nanion": {
+      "platform": "nanion",
+      "soft_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.999989529311657,
+            "prob_int": 9.367714298377905e-06,
+            "prob_low": 1.1080741061277877e-06
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0007434360767299517,
+            "prob_int": 0.8842974733652735,
+            "prob_low": 0.11495908885011609
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9510415979502627,
+            "prob_int": 0.04894454245656519,
+            "prob_low": 1.3863630470129919e-05
+          }
+        ],
+        "row_macro_f1": 0.7692710348544258,
+        "row_accuracy": 0.76246875,
+        "row_cm": [
+          [
+            7973,
+            27,
+            0
+          ],
+          [
+            4017,
+            9368,
+            615
+          ],
+          [
+            1,
+            2941,
+            7058
+          ]
+        ],
+        "ordinal_auc_drug": {
+          "risk_gt_low": 0.9636363636363637,
+          "risk_gt_int": 0.9166666666666667
+        },
+        "ordinal_auc_row": {
+          "risk_gt_low": 0.9490095636363636,
+          "risk_gt_int": 0.8948113541666667
+        },
+        "drug_bootstrap_macro_f1": {
+          "median": 0.8111111111111112,
+          "ci_low": 0.5760683760683761,
+          "ci_high": 1.0,
+          "ci_str": "0.811111 [0.576068, 1.000000]"
+        },
+        "cipa_bootstrap_ovr_auc": {
+          "High": {
+            "median": 0.875,
+            "ci_low": 0.8643229166666669,
+            "ci_high": 0.9583333333333334,
+            "str": "0.875 (0.864-0.958)"
+          },
+          "Int": {
+            "median": 0.7619047619047619,
+            "ci_low": 0.6666666666666666,
+            "ci_high": 0.8571428571428571,
+            "str": "0.762 (0.667-0.857)"
+          },
+          "Low": {
+            "median": 0.9454545454545454,
+            "ci_low": 0.8727272727272727,
+            "ci_high": 1.0,
+            "str": "0.945 (0.873-1.000)"
+          }
+        }
+      },
+      "hard_voting": {
+        "correct_drugs": "13/16",
+        "drug_macro_f1": 0.8193732193732194,
+        "drug_accuracy": 0.8125,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8333333333333334,
+          1.0
+        ],
+        "drug_recall": [
+          1.0,
+          0.7142857142857143,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.7692307692307693,
+          0.8888888888888888
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            5,
+            0
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.999989529311657,
+            "prob_int": 9.367714298377905e-06,
+            "prob_low": 1.1080741061277877e-06
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.0007434360767299517,
+            "prob_int": 0.8842974733652735,
+            "prob_low": 0.11495908885011609
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9510415979502627,
+            "prob_int": 0.04894454245656519,
+            "prob_low": 1.3863630470129919e-05
+          }
+        ],
+        "row_macro_f1": 0.7692710348544258,
+        "row_accuracy": 0.76246875,
+        "row_cm": [
+          [
+            7973,
+            27,
+            0
+          ],
+          [
+            4017,
+            9368,
+            615
+          ],
+          [
+            1,
+            2941,
+            7058
+          ]
+        ],
+        "identical_to_soft_row": true,
+        "identical_to_soft_drug": true
+      }
+    },
+    "manual": {
+      "platform": "manual",
+      "soft_voting": {
+        "correct_drugs": "12/16",
+        "drug_macro_f1": 0.7555555555555555,
+        "drug_accuracy": 0.75,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8,
+          0.8
+        ],
+        "drug_recall": [
+          1.0,
+          0.5714285714285714,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.6666666666666666,
+          0.8
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            4,
+            1
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "clarithromycin",
+            "true_tier": "intermediate",
+            "pred_tier": "low",
+            "category": "under-triage",
+            "prob_high": 0.00015811291210900437,
+            "prob_int": 0.49255196573299553,
+            "prob_low": 0.507289922069789
+          },
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9509311065086722,
+            "prob_int": 0.0007361680710540168,
+            "prob_low": 0.048332708056449195
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.24045446138896515,
+            "prob_int": 0.6669039819693398,
+            "prob_low": 0.09264155401141456
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.887770407725465,
+            "prob_int": 0.0034676437461934714,
+            "prob_low": 0.10876194287363374
+          }
+        ],
+        "row_macro_f1": 0.739218134718687,
+        "row_accuracy": 0.7341166911465983,
+        "row_cm": [
+          [
+            7989,
+            0,
+            10
+          ],
+          [
+            4047,
+            8367,
+            1586
+          ],
+          [
+            397,
+            2468,
+            7135
+          ]
+        ],
+        "ordinal_auc_drug": {
+          "risk_gt_low": 0.9272727272727274,
+          "risk_gt_int": 0.9583333333333334
+        },
+        "ordinal_auc_row": {
+          "risk_gt_low": 0.9329675144324743,
+          "risk_gt_int": 0.9527109456390381
+        },
+        "drug_bootstrap_macro_f1": {
+          "median": 0.7444444444444445,
+          "ci_low": 0.5045454545454545,
+          "ci_high": 0.9407407407407407,
+          "ci_str": "0.744444 [0.504545, 0.940741]"
+        },
+        "cipa_bootstrap_ovr_auc": {
+          "High": {
+            "median": 0.9583333333333334,
+            "ci_low": 0.8958333333333334,
+            "ci_high": 1.0,
+            "str": "0.958 (0.896-1.000)"
+          },
+          "Int": {
+            "median": 0.746031746031746,
+            "ci_low": 0.6507936507936508,
+            "ci_high": 0.8412698412698413,
+            "str": "0.746 (0.651-0.841)"
+          },
+          "Low": {
+            "median": 0.9272727272727272,
+            "ci_low": 0.8545454545454545,
+            "ci_high": 1.0,
+            "str": "0.927 (0.855-1.000)"
+          }
+        }
+      },
+      "hard_voting": {
+        "correct_drugs": "12/16",
+        "drug_macro_f1": 0.7555555555555555,
+        "drug_accuracy": 0.75,
+        "drug_precision": [
+          0.6666666666666666,
+          0.8,
+          0.8
+        ],
+        "drug_recall": [
+          1.0,
+          0.5714285714285714,
+          0.8
+        ],
+        "drug_f1": [
+          0.8,
+          0.6666666666666666,
+          0.8
+        ],
+        "drug_cm": [
+          [
+            4,
+            0,
+            0
+          ],
+          [
+            2,
+            4,
+            1
+          ],
+          [
+            0,
+            1,
+            4
+          ]
+        ],
+        "misclassifications": [
+          {
+            "drug_name": "clarithromycin",
+            "true_tier": "intermediate",
+            "pred_tier": "low",
+            "category": "under-triage",
+            "prob_high": 0.00015811291210900437,
+            "prob_int": 0.49255196573299553,
+            "prob_low": 0.507289922069789
+          },
+          {
+            "drug_name": "domperidone",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.9509311065086722,
+            "prob_int": 0.0007361680710540168,
+            "prob_low": 0.048332708056449195
+          },
+          {
+            "drug_name": "metoprolol",
+            "true_tier": "low",
+            "pred_tier": "intermediate",
+            "category": "over-call",
+            "prob_high": 0.24045446138896515,
+            "prob_int": 0.6669039819693398,
+            "prob_low": 0.09264155401141456
+          },
+          {
+            "drug_name": "pimozide",
+            "true_tier": "intermediate",
+            "pred_tier": "high",
+            "category": "over-call",
+            "prob_high": 0.887770407725465,
+            "prob_int": 0.0034676437461934714,
+            "prob_low": 0.10876194287363374
+          }
+        ],
+        "row_macro_f1": 0.739218134718687,
+        "row_accuracy": 0.7341166911465983,
+        "row_cm": [
+          [
+            7989,
+            0,
+            10
+          ],
+          [
+            4047,
+            8367,
+            1586
+          ],
+          [
+            397,
+            2468,
+            7135
+          ]
+        ],
+        "identical_to_soft_row": true,
+        "identical_to_soft_drug": true
+      }
+    }
+  }
+}

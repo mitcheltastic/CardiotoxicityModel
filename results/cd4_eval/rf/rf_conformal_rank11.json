@@ -1,0 +1,847 @@
+{
+  "rank_11_parameters": {
+    "drug": "sotalol",
+    "q_hat": 0.533987,
+    "alpha": 0.15384615384615385,
+    "nominal_coverage": 0.8461538461538461,
+    "threshold": 0.466013
+  },
+  "lodo_calibration_table": [
+    {
+      "drug_name": "cisapride",
+      "true_class": "intermediate",
+      "true_idx": 1,
+      "prob_high": 0.023487,
+      "prob_int": 0.976482,
+      "prob_low": 3e-05,
+      "s_d": 0.023518,
+      "rank": 1
+    },
+    {
+      "drug_name": "dofetilide",
+      "true_class": "high",
+      "true_idx": 0,
+      "prob_high": 0.974995,
+      "prob_int": 0.024734,
+      "prob_low": 0.000271,
+      "s_d": 0.025005,
+      "rank": 2
+    },
+    {
+      "drug_name": "terfenadine",
+      "true_class": "intermediate",
+      "true_idx": 1,
+      "prob_high": 0.058741,
+      "prob_int": 0.89719,
+      "prob_low": 0.044069,
+      "s_d": 0.10281,
+      "rank": 3
+    },
+    {
+      "drug_name": "mexiletine",
+      "true_class": "low",
+      "true_idx": 2,
+      "prob_high": 0.006357,
+      "prob_int": 0.096546,
+      "prob_low": 0.897096,
+      "s_d": 0.102904,
+      "rank": 4
+    },
+    {
+      "drug_name": "bepridil",
+      "true_class": "high",
+      "true_idx": 0,
+      "prob_high": 0.895961,
+      "prob_int": 0.002966,
+      "prob_low": 0.101073,
+      "s_d": 0.104039,
+      "rank": 5
+    },
+    {
+      "drug_name": "chlorpromazine",
+      "true_class": "intermediate",
+      "true_idx": 1,
+      "prob_high": 0.001469,
+      "prob_int": 0.757775,
+      "prob_low": 0.240756,
+      "s_d": 0.242225,
+      "rank": 6
+    },
+    {
+      "drug_name": "quinidine",
+      "true_class": "high",
+      "true_idx": 0,
+      "prob_high": 0.72619,
+      "prob_int": 0.018756,
+      "prob_low": 0.255054,
+      "s_d": 0.27381,
+      "rank": 7
+    },
+    {
+      "drug_name": "ranolazine",
+      "true_class": "low",
+      "true_idx": 2,
+      "prob_high": 0.043715,
+      "prob_int": 0.279179,
+      "prob_low": 0.677106,
+      "s_d": 0.322894,
+      "rank": 8
+    },
+    {
+      "drug_name": "verapamil",
+      "true_class": "low",
+      "true_idx": 2,
+      "prob_high": 0.018283,
+      "prob_int": 0.350695,
+      "prob_low": 0.631023,
+      "s_d": 0.368977,
+      "rank": 9
+    },
+    {
+      "drug_name": "ondansetron",
+      "true_class": "intermediate",
+      "true_idx": 1,
+      "prob_high": 0.264494,
+      "prob_int": 0.621936,
+      "prob_low": 0.11357,
+      "s_d": 0.378064,
+      "rank": 10
+    },
+    {
+      "drug_name": "sotalol",
+      "true_class": "high",
+      "true_idx": 0,
+      "prob_high": 0.466013,
+      "prob_int": 0.479129,
+      "prob_low": 0.054859,
+      "s_d": 0.533987,
+      "rank": 11
+    },
+    {
+      "drug_name": "diltiazem",
+      "true_class": "low",
+      "true_idx": 2,
+      "prob_high": 0.0,
+      "prob_int": 0.904169,
+      "prob_low": 0.095831,
+      "s_d": 0.904169,
+      "rank": 12
+    }
+  ],
+  "platforms": {
+    "chantest": {
+      "empirical_coverage": 0.875,
+      "covered_ratio": "14/16",
+      "avg_set_size": 1.0,
+      "ambiguous_drugs_count": 0,
+      "ambiguous_drugs_list": [],
+      "empty_sets_count": 0,
+      "empty_sets_list": [],
+      "under_triage_count": 0,
+      "under_triage_list": [],
+      "drug_records": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "p_high": 0.006555,
+          "p_int": 0.9934412499999999,
+          "p_low": 3.7499999999999997e-06,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "p_high": 0.9999975,
+          "p_int": 1.25e-06,
+          "p_low": 1.25e-06,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "p_high": 0.00021625,
+          "p_int": 0.99752125,
+          "p_low": 0.0022625,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "p_high": 2.5e-06,
+          "p_int": 0.9369587500000001,
+          "p_low": 0.06303875,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "p_high": 0.6852837500000001,
+          "p_int": 0.1548425,
+          "p_low": 0.15987375,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "p_high": 0.9997875,
+          "p_int": 9.875e-05,
+          "p_low": 0.00011375,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "p_high": 0.0673075,
+          "p_int": 0.9325225,
+          "p_low": 0.00017,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "p_high": 0.99872625,
+          "p_int": 0.00037875,
+          "p_low": 0.0008950000000000001,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "p_high": 0.0,
+          "p_int": 0.077575,
+          "p_low": 0.9224249999999999,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "p_high": 0.0001825,
+          "p_int": 0.34467125,
+          "p_low": 0.65514625,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "p_high": 0.00134375,
+          "p_int": 0.009938750000000001,
+          "p_low": 0.9887175,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "p_high": 0.0,
+          "p_int": 0.02910625,
+          "p_low": 0.97089375,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "p_high": 0.95123625,
+          "p_int": 0.048745,
+          "p_low": 1.875e-05,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "p_high": 0.0,
+          "p_int": 0.6842125,
+          "p_low": 0.31578749999999994,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "p_high": 2.5e-06,
+          "p_int": 0.383595,
+          "p_low": 0.6164025000000001,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "p_high": 0.99300625,
+          "p_int": 0.0029625,
+          "p_low": 0.00403125,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        }
+      ]
+    },
+    "nanion": {
+      "empirical_coverage": 0.8125,
+      "covered_ratio": "13/16",
+      "avg_set_size": 1.0,
+      "ambiguous_drugs_count": 0,
+      "ambiguous_drugs_list": [],
+      "empty_sets_count": 0,
+      "empty_sets_list": [],
+      "under_triage_count": 0,
+      "under_triage_list": [],
+      "drug_records": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "p_high": 0.006542500000000001,
+          "p_int": 0.99345375,
+          "p_low": 3.7499999999999997e-06,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "p_high": 0.9999975,
+          "p_int": 1.25e-06,
+          "p_low": 1.25e-06,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "p_high": 6.25e-06,
+          "p_int": 0.7647425,
+          "p_low": 0.23525125,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "p_high": 3.7499999999999997e-06,
+          "p_int": 0.9757224999999999,
+          "p_low": 0.02427375,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "p_high": 0.7537437499999999,
+          "p_int": 0.19779125,
+          "p_low": 0.048465,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "p_high": 1.0,
+          "p_int": 0.0,
+          "p_low": 0.0,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "p_high": 0.08200375,
+          "p_int": 0.9177525000000001,
+          "p_low": 0.00024375,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "p_high": 0.9983150000000001,
+          "p_int": 0.00058375,
+          "p_low": 0.00110125,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "p_high": 0.0,
+          "p_int": 0.0696725,
+          "p_low": 0.9303275,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "p_high": 0.00084875,
+          "p_int": 0.88023125,
+          "p_low": 0.11892,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "p_high": 0.0075,
+          "p_int": 0.0116325,
+          "p_low": 0.9808675000000001,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "p_high": 0.0,
+          "p_int": 0.00250875,
+          "p_low": 0.99749125,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "p_high": 0.9518075,
+          "p_int": 0.048185000000000006,
+          "p_low": 7.499999999999999e-06,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "p_high": 0.0,
+          "p_int": 0.68896125,
+          "p_low": 0.31103875,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "p_high": 3.7499999999999997e-06,
+          "p_int": 0.37109375,
+          "p_low": 0.6289025,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "p_high": 0.9910275000000001,
+          "p_int": 0.00063125,
+          "p_low": 0.00834125,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        }
+      ]
+    },
+    "manual": {
+      "empirical_coverage": 0.8125,
+      "covered_ratio": "13/16",
+      "avg_set_size": 1.0625,
+      "ambiguous_drugs_count": 1,
+      "ambiguous_drugs_list": [
+        "clarithromycin"
+      ],
+      "empty_sets_count": 0,
+      "empty_sets_list": [],
+      "under_triage_count": 0,
+      "under_triage_list": [],
+      "drug_records": [
+        {
+          "drug_name": "astemizole",
+          "true_tier": "intermediate",
+          "p_high": 0.00958875,
+          "p_int": 0.99038,
+          "p_low": 3.125e-05,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "azimilide",
+          "true_tier": "high",
+          "p_high": 0.99315625,
+          "p_int": 0.00286125,
+          "p_low": 0.0039825,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "clarithromycin",
+          "true_tier": "intermediate",
+          "p_high": 0.0,
+          "p_int": 0.47640750000000004,
+          "p_low": 0.5235925,
+          "prediction_set": [
+            "intermediate",
+            "low"
+          ],
+          "set_size": 2,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "clozapine",
+          "true_tier": "intermediate",
+          "p_high": 2.5e-06,
+          "p_int": 0.94197875,
+          "p_low": 0.058018749999999994,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "disopyramide",
+          "true_tier": "high",
+          "p_high": 0.725245,
+          "p_int": 0.0126325,
+          "p_low": 0.2621225,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "domperidone",
+          "true_tier": "intermediate",
+          "p_high": 0.9037050000000001,
+          "p_int": 0.0014525000000000002,
+          "p_low": 0.0948425,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "droperidol",
+          "true_tier": "intermediate",
+          "p_high": 0.0968325,
+          "p_int": 0.9030825,
+          "p_low": 8.5e-05,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "ibutilide",
+          "true_tier": "high",
+          "p_high": 0.9972923961980991,
+          "p_int": 0.0010542771385692847,
+          "p_low": 0.001653326663331666,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "loratadine",
+          "true_tier": "low",
+          "p_high": 0.0,
+          "p_int": 0.09808499999999999,
+          "p_low": 0.9019149999999999,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "metoprolol",
+          "true_tier": "low",
+          "p_high": 0.19376875000000002,
+          "p_int": 0.621135,
+          "p_low": 0.18509625,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "nifedipine",
+          "true_tier": "low",
+          "p_high": 0.007498749999999999,
+          "p_int": 0.0112575,
+          "p_low": 0.98124375,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "nitrendipine",
+          "true_tier": "low",
+          "p_high": 0.00077125,
+          "p_int": 0.0040750000000000005,
+          "p_low": 0.9951537500000001,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "pimozide",
+          "true_tier": "intermediate",
+          "p_high": 0.8241499999999999,
+          "p_int": 0.006868750000000001,
+          "p_low": 0.16898125,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "over-call",
+          "is_covered": false
+        },
+        {
+          "drug_name": "risperidone",
+          "true_tier": "intermediate",
+          "p_high": 2.5e-06,
+          "p_int": 0.61551625,
+          "p_low": 0.38448125,
+          "prediction_set": [
+            "intermediate"
+          ],
+          "set_size": 1,
+          "action_tier": "intermediate",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "tamoxifen",
+          "true_tier": "low",
+          "p_high": 0.0,
+          "p_int": 0.3173125,
+          "p_low": 0.6826875,
+          "prediction_set": [
+            "low"
+          ],
+          "set_size": 1,
+          "action_tier": "low",
+          "outcome": "correct",
+          "is_covered": true
+        },
+        {
+          "drug_name": "vandetanib",
+          "true_tier": "high",
+          "p_high": 0.96039125,
+          "p_int": 0.0001225,
+          "p_low": 0.03948625,
+          "prediction_set": [
+            "high"
+          ],
+          "set_size": 1,
+          "action_tier": "high",
+          "outcome": "correct",
+          "is_covered": true
+        }
+      ]
+    }
+  }
+}

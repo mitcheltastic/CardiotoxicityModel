@@ -1,0 +1,431 @@
+{
+  "chantest": {
+    "unified_table": [
+      {
+        "model": "RF alone",
+        "correct": "14/16",
+        "macro_f1_point": 0.8777777777777778,
+        "macro_f1_ci": "0.877778 [0.686610, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "XGB alone",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "soft voting",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "hard voting",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "stacking with RF meta (research)",
+        "correct": "11/16",
+        "macro_f1_point": 0.6944444444444443,
+        "macro_f1_ci": "0.694444 [0.391534, 0.896825]",
+        "under_triaged_drugs": "disopyramide",
+        "under_triage_count": 1
+      },
+      {
+        "model": "stacking with LR meta (deployed)",
+        "correct": "14/16",
+        "macro_f1_point": 0.8777777777777778,
+        "macro_f1_ci": "0.877778 [0.686610, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "multivariate LR baseline",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "qNet-only LR baseline",
+        "correct": "13/16",
+        "macro_f1_point": 0.8119658119658121,
+        "macro_f1_ci": "0.811966 [0.583333, 1.000000]",
+        "under_triaged_drugs": "disopyramide",
+        "under_triage_count": 1
+      }
+    ],
+    "conformal_safety_rank11": {
+      "stacking with LR meta (deployed)": {
+        "avg_set_size": 1.0625,
+        "under_triage_count": 0,
+        "emp_coverage": 0.875
+      },
+      "RF alone": {
+        "avg_set_size": 1.0,
+        "under_triage_count": 0,
+        "emp_coverage": 0.875
+      },
+      "qNet-only LR baseline": {
+        "avg_set_size": 1.5625,
+        "under_triage_count": 0,
+        "emp_coverage": 0.875
+      }
+    },
+    "paired_bootstrap_differences": [
+      {
+        "comparison": "Deployed minus RF alone",
+        "median_diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "ci_str": "+0.000000 [+0.000000, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus XGB alone",
+        "median_diff": 0.057058682058682086,
+        "ci_low": 0.0,
+        "ci_high": 0.21666666666666667,
+        "ci_str": "+0.057059 [+0.000000, +0.216667]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus soft voting",
+        "median_diff": 0.057058682058682086,
+        "ci_low": 0.0,
+        "ci_high": 0.21666666666666667,
+        "ci_str": "+0.057059 [+0.000000, +0.216667]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus hard voting",
+        "median_diff": 0.057058682058682086,
+        "ci_low": 0.0,
+        "ci_high": 0.21666666666666667,
+        "ci_str": "+0.057059 [+0.000000, +0.216667]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus stacking with RF meta (research)",
+        "median_diff": 0.1873015873015873,
+        "ci_low": 0.0,
+        "ci_high": 0.4481547619047619,
+        "ci_str": "+0.187302 [+0.000000, +0.448155]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus multivariate LR baseline",
+        "median_diff": 0.057058682058682086,
+        "ci_low": 0.0,
+        "ci_high": 0.21666666666666667,
+        "ci_str": "+0.057059 [+0.000000, +0.216667]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus qNet-only LR baseline",
+        "median_diff": 0.06349206349206338,
+        "ci_low": 0.0,
+        "ci_high": 0.23703703703703694,
+        "ci_str": "+0.063492 [+0.000000, +0.237037]",
+        "contains_zero": true
+      }
+    ]
+  },
+  "nanion": {
+    "unified_table": [
+      {
+        "model": "RF alone",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "XGB alone",
+        "correct": "12/16",
+        "macro_f1_point": 0.7547619047619047,
+        "macro_f1_ci": "0.754762 [0.479347, 0.944056]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "soft voting",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "hard voting",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "stacking with RF meta (research)",
+        "correct": "10/16",
+        "macro_f1_point": 0.6210317460317459,
+        "macro_f1_ci": "0.621032 [0.311111, 0.851852]",
+        "under_triaged_drugs": "disopyramide",
+        "under_triage_count": 1
+      },
+      {
+        "model": "stacking with LR meta (deployed)",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "multivariate LR baseline",
+        "correct": "12/16",
+        "macro_f1_point": 0.7547619047619047,
+        "macro_f1_ci": "0.754762 [0.479347, 0.944056]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "qNet-only LR baseline",
+        "correct": "12/16",
+        "macro_f1_point": 0.7566137566137566,
+        "macro_f1_ci": "0.756614 [0.491439, 0.940741]",
+        "under_triaged_drugs": "disopyramide",
+        "under_triage_count": 1
+      }
+    ],
+    "conformal_safety_rank11": {
+      "stacking with LR meta (deployed)": {
+        "avg_set_size": 1.125,
+        "under_triage_count": 0,
+        "emp_coverage": 0.8125
+      },
+      "RF alone": {
+        "avg_set_size": 1.0,
+        "under_triage_count": 0,
+        "emp_coverage": 0.8125
+      },
+      "qNet-only LR baseline": {
+        "avg_set_size": 1.5625,
+        "under_triage_count": 0,
+        "emp_coverage": 0.875
+      }
+    },
+    "paired_bootstrap_differences": [
+      {
+        "comparison": "Deployed minus RF alone",
+        "median_diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "ci_str": "+0.000000 [+0.000000, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus XGB alone",
+        "median_diff": 0.06153846153846143,
+        "ci_low": 0.0,
+        "ci_high": 0.24285765160765163,
+        "ci_str": "+0.061538 [+0.000000, +0.242858]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus soft voting",
+        "median_diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "ci_str": "+0.000000 [+0.000000, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus hard voting",
+        "median_diff": 0.0,
+        "ci_low": 0.0,
+        "ci_high": 0.0,
+        "ci_str": "+0.000000 [+0.000000, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus stacking with RF meta (research)",
+        "median_diff": 0.19867724867724862,
+        "ci_low": 0.0,
+        "ci_high": 0.45925925925925926,
+        "ci_str": "+0.198677 [+0.000000, +0.459259]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus multivariate LR baseline",
+        "median_diff": 0.06153846153846143,
+        "ci_low": 0.0,
+        "ci_high": 0.24285765160765163,
+        "ci_str": "+0.061538 [+0.000000, +0.242858]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus qNet-only LR baseline",
+        "median_diff": 0.05969498910675397,
+        "ci_low": 0.0,
+        "ci_high": 0.22751322751322745,
+        "ci_str": "+0.059695 [+0.000000, +0.227513]",
+        "contains_zero": true
+      }
+    ]
+  },
+  "manual": {
+    "unified_table": [
+      {
+        "model": "RF alone",
+        "correct": "12/16",
+        "macro_f1_point": 0.7555555555555555,
+        "macro_f1_ci": "0.755556 [0.504545, 0.940741]",
+        "under_triaged_drugs": "clarithromycin",
+        "under_triage_count": 1
+      },
+      {
+        "model": "XGB alone",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "soft voting",
+        "correct": "12/16",
+        "macro_f1_point": 0.7555555555555555,
+        "macro_f1_ci": "0.755556 [0.504545, 0.940741]",
+        "under_triaged_drugs": "clarithromycin",
+        "under_triage_count": 1
+      },
+      {
+        "model": "hard voting",
+        "correct": "12/16",
+        "macro_f1_point": 0.7555555555555555,
+        "macro_f1_ci": "0.755556 [0.504545, 0.940741]",
+        "under_triaged_drugs": "clarithromycin",
+        "under_triage_count": 1
+      },
+      {
+        "model": "stacking with RF meta (research)",
+        "correct": "12/16",
+        "macro_f1_point": 0.7547619047619047,
+        "macro_f1_ci": "0.754762 [0.479347, 0.944056]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "stacking with LR meta (deployed)",
+        "correct": "11/16",
+        "macro_f1_point": 0.6909090909090909,
+        "macro_f1_ci": "0.690909 [0.436364, 0.885714]",
+        "under_triaged_drugs": "clarithromycin, risperidone",
+        "under_triage_count": 2
+      },
+      {
+        "model": "multivariate LR baseline",
+        "correct": "13/16",
+        "macro_f1_point": 0.8193732193732194,
+        "macro_f1_ci": "0.819373 [0.576068, 1.000000]",
+        "under_triaged_drugs": "none",
+        "under_triage_count": 0
+      },
+      {
+        "model": "qNet-only LR baseline",
+        "correct": "12/16",
+        "macro_f1_point": 0.7515151515151516,
+        "macro_f1_ci": "0.751515 [0.494434, 0.939394]",
+        "under_triaged_drugs": "risperidone",
+        "under_triage_count": 1
+      }
+    ],
+    "conformal_safety_rank11": {
+      "stacking with LR meta (deployed)": {
+        "avg_set_size": 1.0625,
+        "under_triage_count": 1,
+        "emp_coverage": 0.75
+      },
+      "RF alone": {
+        "avg_set_size": 1.0625,
+        "under_triage_count": 0,
+        "emp_coverage": 0.8125
+      },
+      "qNet-only LR baseline": {
+        "avg_set_size": 1.625,
+        "under_triage_count": 0,
+        "emp_coverage": 0.875
+      }
+    },
+    "paired_bootstrap_differences": [
+      {
+        "comparison": "Deployed minus RF alone",
+        "median_diff": -0.06313131313131315,
+        "ci_low": -0.21111111111111125,
+        "ci_high": 0.0,
+        "ci_str": "-0.063131 [-0.211111, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus XGB alone",
+        "median_diff": -0.12711640211640218,
+        "ci_low": -0.31852813852813844,
+        "ci_high": 0.0,
+        "ci_str": "-0.127116 [-0.318528, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus soft voting",
+        "median_diff": -0.06313131313131315,
+        "ci_low": -0.21111111111111125,
+        "ci_high": 0.0,
+        "ci_str": "-0.063131 [-0.211111, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus hard voting",
+        "median_diff": -0.06313131313131315,
+        "ci_low": -0.21111111111111125,
+        "ci_high": 0.0,
+        "ci_str": "-0.063131 [-0.211111, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus stacking with RF meta (research)",
+        "median_diff": -0.06381766381766385,
+        "ci_low": -0.28594823613205966,
+        "ci_high": 0.15774069068186702,
+        "ci_str": "-0.063818 [-0.285948, +0.157741]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus multivariate LR baseline",
+        "median_diff": -0.12711640211640218,
+        "ci_low": -0.31852813852813844,
+        "ci_high": 0.0,
+        "ci_str": "-0.127116 [-0.318528, +0.000000]",
+        "contains_zero": true
+      },
+      {
+        "comparison": "Deployed minus qNet-only LR baseline",
+        "median_diff": -0.05808080808080829,
+        "ci_low": -0.21329056822090872,
+        "ci_high": 0.023376623376623273,
+        "ci_str": "-0.058081 [-0.213291, +0.023377]",
+        "contains_zero": true
+      }
+    ]
+  }
+}
