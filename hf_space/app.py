@@ -45,6 +45,15 @@ if isinstance(_test_sv, list):
 else:
     print(f"TreeExplainer initialized. Multi-class SHAP output shape: {_test_sv.shape}")
 
+# --- Full pipeline simulation (isolated add-on; failures never affect predict/explain) ---
+try:
+    from sim import sim_service
+    sim_service.start_background_init()
+    _SIM_AVAILABLE = True
+except Exception as _sim_err:
+    print(f"[sim] disabled: {_sim_err}", flush=True)
+    _SIM_AVAILABLE = False
+
 def conformal_from_proba(prob_dict):
     # Internal conformal rule uses Title-case
     proba = {k.capitalize(): float(v) for k, v in prob_dict.items()}
@@ -182,6 +191,19 @@ with gr.Blocks(title="CiPA TdP Risk Classifier") as demo:
             
     predict_btn.click(fn=predict, inputs=inputs, outputs=[prob_out, tier_out, conformal_out, action_out], api_name="predict")
     explain_btn.click(fn=explain, inputs=inputs, outputs=explain_out, api_name="explain")
+
+    # --- Full pipeline simulation endpoints (hidden from the UI, API only) ---
+    if _SIM_AVAILABLE:
+        with gr.Column(visible=False):
+            sim_req = gr.Textbox(label="Request JSON")
+            sim_key = gr.Textbox(label="Key", type="password")
+            sim_out = gr.JSON()
+            gr.Button("Simulate").click(sim_service.simulate, [sim_req, sim_key], sim_out,
+                                        api_name="simulate", concurrency_limit=1, concurrency_id="sim_run")
+            gr.Button("Drugs").click(sim_service.list_drugs, [sim_key], sim_out,
+                                     api_name="sim_drugs", concurrency_id="sim_meta")
+            gr.Button("Status").click(sim_service.status, None, sim_out,
+                                      api_name="sim_status", concurrency_id="sim_meta")
 
 if __name__ == '__main__':
     demo.launch()

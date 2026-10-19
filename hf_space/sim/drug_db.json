@@ -1,0 +1,534 @@
+{
+  "astemizole": {
+    "cmax_nM": 0.26,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 77530,
+      "Ku": 3.073e-05,
+      "n": 0.6762,
+      "halfmax": 169600,
+      "Vhalf": -1.001
+    },
+    "ic50": {
+      "INa_IC50": 1862,
+      "INa_h": 1.98,
+      "INaL_IC50": 786.5,
+      "INaL_h": 1.98,
+      "ICaL_IC50": 972,
+      "ICaL_h": 1.98
+    }
+  },
+  "azimilide": {
+    "cmax_nM": 70,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 78990,
+      "Ku": 0.007555,
+      "n": 0.5785,
+      "halfmax": 1296000,
+      "Vhalf": -10.16
+    },
+    "ic50": {
+      "INa_IC50": 18970,
+      "INa_h": 1.98,
+      "INaL_IC50": 3700,
+      "INaL_h": 1.352,
+      "ICaL_IC50": 9587,
+      "ICaL_h": 1.98
+    }
+  },
+  "bepridil": {
+    "cmax_nM": 33,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 5594000,
+      "Ku": 0.0001719,
+      "n": 0.9374,
+      "halfmax": 147200000,
+      "Vhalf": -61.34
+    },
+    "ic50": {
+      "INa_IC50": 7943000000,
+      "INa_h": 1.008,
+      "INaL_IC50": 7943000000,
+      "INaL_h": 1.98,
+      "ICaL_IC50": 21230,
+      "ICaL_h": 0.505
+    }
+  },
+  "chlorpromazine": {
+    "cmax_nM": 38,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 157900,
+      "Ku": 0.04671,
+      "n": 0.8871,
+      "halfmax": 43510000,
+      "Vhalf": -14.45
+    },
+    "ic50": {
+      "INa_IC50": 10340,
+      "INa_h": 1.356,
+      "INaL_IC50": 669.7,
+      "INaL_h": 1.779,
+      "ICaL_IC50": 6632,
+      "ICaL_h": 1.478
+    }
+  },
+  "cisapride": {
+    "cmax_nM": 2.6,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 10.22,
+      "Ku": 0.0004161,
+      "n": 0.9615,
+      "halfmax": 42.32,
+      "Vhalf": -167.4
+    },
+    "ic50": {
+      "INa_IC50": 6248,
+      "INa_h": 0.8854,
+      "INaL_IC50": 456.2,
+      "INaL_h": 1.817,
+      "ICaL_IC50": 7943000000,
+      "ICaL_h": 1.196
+    }
+  },
+  "clarithromycin": {
+    "cmax_nM": 1206,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 68.65,
+      "Ku": 0.01517,
+      "n": 0.7455,
+      "halfmax": 56880,
+      "Vhalf": -161.7
+    },
+    "ic50": {
+      "INa_IC50": 243300,
+      "INa_h": 1.98,
+      "INaL_IC50": 269100,
+      "INaL_h": 1.335,
+      "ICaL_IC50": 128900,
+      "ICaL_h": 1.98
+    }
+  },
+  "clozapine": {
+    "cmax_nM": 71,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 6.331,
+      "Ku": 0.02552,
+      "n": 1.314,
+      "halfmax": 33760,
+      "Vhalf": -8.325
+    },
+    "ic50": {
+      "INa_IC50": 9338,
+      "INa_h": 1.889,
+      "INaL_IC50": 2235,
+      "INaL_h": 1.347,
+      "ICaL_IC50": 4477,
+      "ICaL_h": 1.98
+    }
+  },
+  "diltiazem": {
+    "cmax_nM": 122,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 182500,
+      "Ku": 0.282,
+      "n": 0.9382,
+      "halfmax": 667700000,
+      "Vhalf": -90.65
+    },
+    "ic50": {
+      "INa_IC50": 19700,
+      "INa_h": 1.275,
+      "INaL_IC50": 3038,
+      "INaL_h": 1.081,
+      "ICaL_IC50": 31030,
+      "ICaL_h": 1.176
+    }
+  },
+  "disopyramide": {
+    "cmax_nM": 742,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 1.756,
+      "Ku": 0.0364,
+      "n": 1.999,
+      "halfmax": 1560000,
+      "Vhalf": -72.32
+    },
+    "ic50": {
+      "INa_IC50": 73110,
+      "INa_h": 0.9003,
+      "INaL_IC50": 20050,
+      "INaL_h": 0.7218,
+      "ICaL_IC50": 110000,
+      "ICaL_h": 0.8718
+    }
+  },
+  "dofetilide": {
+    "cmax_nM": 2,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 35.1,
+      "Ku": 1.816e-05,
+      "n": 1.08,
+      "halfmax": 216.6,
+      "Vhalf": -1
+    },
+    "ic50": {
+      "INa_IC50": 710.3,
+      "INa_h": 1.98,
+      "INaL_IC50": 18350,
+      "INaL_h": 0.505,
+      "ICaL_IC50": 7943000000,
+      "ICaL_h": 1.097
+    }
+  },
+  "domperidone": {
+    "cmax_nM": 19,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 677100,
+      "Ku": 0.0002305,
+      "n": 0.6137,
+      "halfmax": 3576000,
+      "Vhalf": -24.19
+    },
+    "ic50": {
+      "INa_IC50": 6659,
+      "INa_h": 1.425,
+      "INaL_IC50": 669,
+      "INaL_h": 0.8924,
+      "ICaL_IC50": 14120,
+      "ICaL_h": 1.291
+    }
+  },
+  "droperidol": {
+    "cmax_nM": 6.33,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 15.85,
+      "Ku": 0.001267,
+      "n": 0.5489,
+      "halfmax": 90.09,
+      "Vhalf": -78.78
+    },
+    "ic50": {
+      "INa_IC50": 8063,
+      "INa_h": 1.067,
+      "INaL_IC50": 530.8,
+      "INaL_h": 1.017,
+      "ICaL_IC50": 7427,
+      "ICaL_h": 0.9114
+    }
+  },
+  "ibutilide": {
+    "cmax_nM": 100,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 14.45,
+      "Ku": 6.104e-05,
+      "n": 0.902,
+      "halfmax": 35.07,
+      "Vhalf": -9.817
+    },
+    "ic50": {
+      "INa_IC50": 6957,
+      "INa_h": 0.6987,
+      "INaL_IC50": 811,
+      "INaL_h": 0.9446,
+      "ICaL_IC50": 31200,
+      "ICaL_h": 0.9494
+    }
+  },
+  "loratadine": {
+    "cmax_nM": 0.45,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 98960,
+      "Ku": 0.01055,
+      "n": 0.8403,
+      "halfmax": 106500000,
+      "Vhalf": -1
+    },
+    "ic50": {
+      "INa_IC50": 18180,
+      "INa_h": 1.98,
+      "INaL_IC50": 2187,
+      "INaL_h": 1.087,
+      "ICaL_IC50": 2652,
+      "ICaL_h": 1.522
+    }
+  },
+  "metoprolol": {
+    "cmax_nM": 1800,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 82210,
+      "Ku": 0.9785,
+      "n": 0.6873,
+      "halfmax": 53800000,
+      "Vhalf": -86.19
+    },
+    "ic50": {
+      "INa_IC50": 148800,
+      "INa_h": 1.004,
+      "INaL_IC50": 24350,
+      "INaL_h": 0.7559,
+      "ICaL_IC50": 391000,
+      "ICaL_h": 0.8924
+    }
+  },
+  "mexiletine": {
+    "cmax_nM": 4129,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 15,
+      "Ku": 0.07114,
+      "n": 1.139,
+      "halfmax": 723000,
+      "Vhalf": -87.51
+    },
+    "ic50": {
+      "INa_IC50": 67500,
+      "INa_h": 1.244,
+      "INaL_IC50": 4669,
+      "INaL_h": 0.982,
+      "ICaL_IC50": 176100,
+      "ICaL_h": 0.8571
+    }
+  },
+  "nifedipine": {
+    "cmax_nM": 7.7,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 1.029,
+      "Ku": 0.3565,
+      "n": 0.9613,
+      "halfmax": 130200,
+      "Vhalf": -23.05
+    },
+    "ic50": {
+      "INa_IC50": 41720,
+      "INa_h": 1.538,
+      "INaL_IC50": 781.5,
+      "INaL_h": 0.7852,
+      "ICaL_IC50": 33.89,
+      "ICaL_h": 0.8526
+    }
+  },
+  "nitrendipine": {
+    "cmax_nM": 3.02,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 1.847,
+      "Ku": 0.991,
+      "n": 1.561,
+      "halfmax": 15820000,
+      "Vhalf": -68.23
+    },
+    "ic50": {
+      "INa_IC50": 10410,
+      "INa_h": 1.211,
+      "INaL_IC50": 356.2,
+      "INaL_h": 0.8922,
+      "ICaL_IC50": 527.1,
+      "ICaL_h": 0.6373
+    }
+  },
+  "ondansetron": {
+    "cmax_nM": 139,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 172000,
+      "Ku": 0.02324,
+      "n": 0.891,
+      "halfmax": 52240000,
+      "Vhalf": -82.2
+    },
+    "ic50": {
+      "INa_IC50": 21170,
+      "INa_h": 1.98,
+      "INaL_IC50": 6830,
+      "INaL_h": 1.251,
+      "ICaL_IC50": 103900,
+      "ICaL_h": 0.505
+    }
+  },
+  "pimozide": {
+    "cmax_nM": 0.431,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 12.74,
+      "Ku": 4.288e-05,
+      "n": 0.57,
+      "halfmax": 5.314,
+      "Vhalf": -71.47
+    },
+    "ic50": {
+      "INa_IC50": 7943000000,
+      "INa_h": 1.235,
+      "INaL_IC50": 6624,
+      "INaL_h": 0.5151,
+      "ICaL_IC50": 443.3,
+      "ICaL_h": 1.151
+    }
+  },
+  "quinidine": {
+    "cmax_nM": 3237,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 275.7,
+      "Ku": 0.004103,
+      "n": 0.8488,
+      "halfmax": 53830,
+      "Vhalf": -61.35
+    },
+    "ic50": {
+      "INa_IC50": 16620,
+      "INa_h": 1.377,
+      "INaL_IC50": 2359,
+      "INaL_h": 0.9002,
+      "ICaL_IC50": 30290,
+      "ICaL_h": 1.98
+    }
+  },
+  "ranolazine": {
+    "cmax_nM": 1948.2,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 52.84,
+      "Ku": 0.02035,
+      "n": 0.9532,
+      "halfmax": 143000,
+      "Vhalf": -94.99
+    },
+    "ic50": {
+      "INa_IC50": 82430,
+      "INa_h": 1.058,
+      "INaL_IC50": 5946,
+      "INaL_h": 0.9904,
+      "ICaL_IC50": 187800,
+      "ICaL_h": 1.98
+    }
+  },
+  "risperidone": {
+    "cmax_nM": 1.81,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 3.726,
+      "Ku": 0.0009118,
+      "n": 0.8593,
+      "halfmax": 93.16,
+      "Vhalf": -72.15
+    },
+    "ic50": {
+      "INa_IC50": 7943000000,
+      "INa_h": 1.389,
+      "INaL_IC50": 3301,
+      "INaL_h": 1.98,
+      "ICaL_IC50": 8503,
+      "ICaL_h": 1.98
+    }
+  },
+  "sotalol": {
+    "cmax_nM": 14690,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 96190,
+      "Ku": 0.02225,
+      "n": 0.7513,
+      "halfmax": 385600000,
+      "Vhalf": -51.5
+    },
+    "ic50": {
+      "INa_IC50": 49180000,
+      "INa_h": 0.6235,
+      "INaL_IC50": 7943000000,
+      "INaL_h": 1.98,
+      "ICaL_IC50": 14290000,
+      "ICaL_h": 0.9927
+    }
+  },
+  "tamoxifen": {
+    "cmax_nM": 21,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 4.429,
+      "Ku": 0.006673,
+      "n": 1.715,
+      "halfmax": 144900,
+      "Vhalf": -1
+    },
+    "ic50": {
+      "INa_IC50": 9227,
+      "INa_h": 1.98,
+      "INaL_IC50": 4515,
+      "INaL_h": 1.98,
+      "ICaL_IC50": 3944,
+      "ICaL_h": 1.98
+    }
+  },
+  "terfenadine": {
+    "cmax_nM": 4,
+    "cipa_risk": "intermediate",
+    "herg": {
+      "Kmax": 102200,
+      "Ku": 7.788e-05,
+      "n": 0.6502,
+      "halfmax": 409500,
+      "Vhalf": -81.63
+    },
+    "ic50": {
+      "INa_IC50": 7910000000,
+      "INa_h": 0.8124,
+      "INaL_IC50": 98.68,
+      "INaL_h": 1.137,
+      "ICaL_IC50": 942.5,
+      "ICaL_h": 1.98
+    }
+  },
+  "vandetanib": {
+    "cmax_nM": 255.4,
+    "cipa_risk": "high",
+    "herg": {
+      "Kmax": 25.67,
+      "Ku": 0.01765,
+      "n": 0.7128,
+      "halfmax": 797.7,
+      "Vhalf": -41.57
+    },
+    "ic50": {
+      "INa_IC50": 6335,
+      "INa_h": 1.98,
+      "INaL_IC50": 4654,
+      "INaL_h": 1.812,
+      "ICaL_IC50": 3829,
+      "ICaL_h": 1.98
+    }
+  },
+  "verapamil": {
+    "cmax_nM": 81,
+    "cipa_risk": "low",
+    "herg": {
+      "Kmax": 1694000,
+      "Ku": 0.0008165,
+      "n": 1.043,
+      "halfmax": 335600000,
+      "Vhalf": -97.08
+    },
+    "ic50": {
+      "INa_IC50": 4172,
+      "INa_h": 1.98,
+      "INaL_IC50": 974,
+      "INaL_h": 1.203,
+      "ICaL_IC50": 3218,
+      "ICaL_h": 0.5251
+    }
+  }
+}

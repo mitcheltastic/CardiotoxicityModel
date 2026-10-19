@@ -1,0 +1,4 @@
+r-base-core
+r-cran-desolve
+r-cran-jsonlite
+build-essential
