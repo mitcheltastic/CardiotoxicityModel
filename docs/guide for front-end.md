@@ -1,153 +1,197 @@
-# TdP CiPA Screening — API Contract (v2)
+# TdP CiPA Screening — API Contract (v2.1 - Rev2 Production)
 
-Integration reference for the frontend. The model is deployed as a Gradio app on
-Hugging Face Spaces, which auto-exposes a REST API. There are **two endpoints**:
-`predict` (instant risk tier) and `explain` (per-prediction SHAP, slower).
-
-**Live API docs (source of truth):** open the Space, click **"Use via API"** in the footer.
-Confirm the endpoint names there — this doc assumes they are `predict` and `explain`.
+Integration reference for frontend applications (Web / Mobile). The model is deployed as a Gradio application on Hugging Face Spaces (`mitcheltastic/tdp-cipa-screening`), which auto-exposes REST and WebSocket/SSE endpoints.
 
 ---
 
-## 1. Connection details
+## 1. Connection Details
 
 | Field | Value |
 |---|---|
-| Space | `mitcheltastic/tdp-cipa-screening` |
-| Base URL | `https://mitcheltastic-tdp-cipa-screening.hf.space` |
-| API prefix | `/gradio_api` (required — omitting it returns 405) |
-| Auth | None (public Space). If ever set Private: header `Authorization: Bearer <HF_TOKEN>`. |
-| OpenAPI spec | `https://mitcheltastic-tdp-cipa-screening.hf.space/gradio_api/openapi.json` |
-
-**Gradio REST is two-step:** `POST /gradio_api/call/<name>` returns an `event_id`, then
-`GET /gradio_api/call/<name>/<event_id>` streams the result (SSE). The `@gradio/client`
-library (section 5) hides this — prefer it.
+| **Space** | `mitcheltastic/tdp-cipa-screening` |
+| **Base URL** | `https://mitcheltastic-tdp-cipa-screening.hf.space` |
+| **API Prefix** | `/gradio_api` (mandatory — omitting it returns HTTP 405) |
+| **Auth** | None (Public Space). |
+| **OpenAPI Spec** | `https://mitcheltastic-tdp-cipa-screening.hf.space/gradio_api/openapi.json` |
 
 ---
 
-## 2. Input contract (same for both endpoints)  ⚠️
+## 2. Input Contract (Predict & Explain Endpoints) ⚠️
 
-Send **11 RAW (UNSCALED) biomarker values** as a JSON array, in **exactly this order**.
-Do NOT scale on the client — the server applies its own `StandardScaler`. Order matters,
-not the names.
+Send **11 biomarkers (ratio to drug-free control)** as a JSON array of floats, in **exactly this order**:
 
-| # | Key | Type | | # | Key | Type |
-|---|-----|------|-|---|-----|------|
-| 1 | `qNet` | float | | 7 | `max_dv` | float |
-| 2 | `dvdtmax` | float | | 8 | `camax` | float |
-| 3 | `vmax` | float | | 9 | `carest` | float |
-| 4 | `vrest` | float | | 10 | `CaTD50` | float |
-| 5 | `APD50` | float | | 11 | `CaTD90` | float |
-| 6 | `APD90` | float | | | | |
+| Index | Key | Description / Unit | Example Value (High Risk: Azimilide) | Example Value (Int Risk: Clarithromycin) |
+|:---:|:---|:---|:---:|:---:|
+| 1 | `qNet` | Net repolarization charge (normalized ratio) | `0.62631` | `0.918296` |
+| 2 | `dvdtmax` | Maximum depolarization velocity ($dV_m/dt_{\max}$) | `0.99975` | `0.999048` |
+| 3 | `vmax` | Peak action potential voltage ($V_{m,\text{peak}}$) | `1.003687` | `0.990152` |
+| 4 | `vrest` | Resting membrane potential ($V_{m,\text{rest}}$) | `-0.999976` | `-1.000058` |
+| 5 | `APD50` | Action potential duration at 50% repolarization | `1.422269` | `1.115546` |
+| 6 | `APD90` | Action potential duration at 90% repolarization | `1.521552` | `1.145690` |
+| 7 | `max_dv` | Maximum repolarization rate ($dV_m/dt_{\text{repol}}$) | `-0.631328` | `-0.838632` |
+| 8 | `camax` | Peak intracellular calcium ($Ca_{\text{peak}}$) | `1.063894` | `0.937907` |
+| 9 | `carest` | Resting intracellular calcium ($Ca_{\text{rest}}$) | `1.020000` | `0.990000` |
+| 10 | `CaTD50` | Calcium transient duration at 50% recovery | `1.121262` | `1.080565` |
+| 11 | `CaTD90` | Calcium transient duration at 90% recovery | `1.056818` | `1.038912` |
+
+> **Important Note on Preprocessing**: Features are control-referenced ratio values derived upstream. **Do NOT apply StandardScaler or MinMaxScaler** on the client. Send the ratio values directly.
 
 ---
 
-## 3. Endpoint `predict` — risk tier (instant)
+## 3. Endpoint `/predict` — Risk Triage & Conformal Safety
 
-**Route:** `POST /gradio_api/call/predict`
+**Route:** `POST /gradio_api/call/predict`  
+**Execution Time:** Fast (~35 ms)
 
-Returns a `data` array of 2 elements:
-- `data[0]` — class probabilities (Gradio `Label` format):
-  ```json
-  { "label": "High",
+Returns a `data` array containing **4 elements**:
+
+```json
+[
+  // data[0]: Class Probabilities (Gradio Label format)
+  {
+    "label": "High",
     "confidences": [
-      { "label": "high",         "confidence": 1.0 },
-      { "label": "intermediate", "confidence": 0.0 },
-      { "label": "low",          "confidence": 0.0 } ] }
-  ```
-- `data[1]` — risk tier string: `"High"` | `"Intermediate"` | `"Low"`.
+      { "label": "high", "confidence": 0.885 },
+      { "label": "intermediate", "confidence": 0.0925 },
+      { "label": "low", "confidence": 0.0225 }
+    ]
+  },
 
-Note: tree ensemble → confidences often come back as hard `1.0 / 0.0`. Display as a tier,
-not as a calibrated clinical probability.
+  // data[1]: Legacy Tier String
+  "Predicted Risk Tier: High",
+
+  // data[2]: Conformal Prediction Safety Metadata Object
+  {
+    "prediction_set": ["high"],
+    "recommended_action": "high",
+    "set_size": 1,
+    "is_ambiguous": false,
+    "out_of_distribution": false,
+    "alpha": 0.15384615384615385,
+    "q_hat": 0.533987,
+    "calibration_note": "Conformal threshold calibrated at drug level on probability vectors averaged over 2000 replicate samples per drug (leave-one-drug-out over 12 training drugs)..."
+  },
+
+  // data[3]: Formatted UI Markdown String
+  "### Recommended Action: High"
+]
+```
+
+### Handling Out-of-Distribution (OOD) / Model Abstention
+When an input profile is corrupt, anomalous, or unconfident (no risk tier achieves $p \ge 1 - \hat{q} = 0.466013$):
+- `data[2].out_of_distribution` will be `true`.
+- `data[2].prediction_set` will be `[]` (empty set).
+- `data[2].recommended_action` defaults conservatively to `"high"` (high-risk monitoring).
+- `data[2].warning` will contain: `"No class met the conformal threshold. Result is not covered by the guarantee. The model abstains and recommends High risk monitoring."`
 
 ---
 
-## 4. Endpoint `explain` — per-prediction SHAP (slower)
+## 4. Endpoint `/explain` — Sub-2ms TreeSHAP Attribution
 
-**Route:** `POST /gradio_api/call/explain`
-Same 11-value input. Call this only on user demand (e.g. an "Explain" button) — it takes a
-few seconds (model-agnostic KernelExplainer), and the FIRST call after the Space wakes is
-slower (one-time JIT compile). `predict` stays instant regardless.
+**Route:** `POST /gradio_api/call/explain`  
+**Execution Time:** Ultra-fast (<2 ms via native `TreeExplainer`)  
+**Input:** Same 11-value array as `/predict`.
 
-Returns a `data` array whose `data[0]` is the SHAP object:
+Returns a `data` array where `data[0]` is the SHAP attribution object:
+
 ```json
 {
   "predicted_class": "high",
   "base_value": 0.3347,
   "contributions": [
-    { "biomarker": "qNet",  "value": 43.64,  "shap": 0.3008 },
-    { "biomarker": "APD90", "value": 441.25, "shap": 0.1090 }
+    { "biomarker": "qNet", "value": 0.62631, "shap": 0.3008 },
+    { "biomarker": "APD90", "value": 1.521552, "shap": 0.1090 },
+    { "biomarker": "APD50", "value": 1.422269, "shap": 0.0652 }
     // ... all 11 biomarkers
   ]
 }
 ```
 
-**How to read it (for the chart):**
-- SHAP values explain the **predicted class only** — i.e. "why this tier."
-- `base_value` = model's average output for that class; `base_value + Σ shap ≈ P(predicted tier)`.
-- `shap > 0` → that biomarker pushed the drug **toward** the predicted tier.
-- `shap < 0` → pushed it **away** from the predicted tier.
-- `value` is the raw (unscaled) biomarker value the user entered — show it as a label.
+### Visualizing SHAP on the Client
+- **Sort**: Order the contributions array by `|shap|` descending.
+- **Direction**: `shap > 0` pushed the drug **toward** the predicted tier (red/orange); `shap < 0` pushed it **away** (blue/green).
+- **Label**: Display the biomarker name along with the user's input ratio value.
 
 ---
 
-## 5. Recommended: JavaScript client (handles both endpoints + the two-step flow)
+## 5. Full Pipeline Biophysical Simulation Endpoints (FDA ORd Engine)
+
+The deployed space also hosts full biophysical differential equation simulation endpoints that convert raw ion channel inhibition data ($IC_{50}$, Hill coefficients) and clinical $C_{\max}$ concentrations into cellular action potentials:
+
+### 5.1 `/sim_drugs` — List Available Reference Compounds
+- **Route:** `POST /gradio_api/call/sim_drugs`
+- **Input:** `[key]` (string)
+- **Output:** JSON list of 28 reference compounds with pre-configured channel affinities.
+
+### 5.2 `/simulate` — Execute Biophysical Simulation
+- **Route:** `POST /gradio_api/call/simulate`
+- **Input:** `[request_json_str, key]`
+- **Supported Payload Formats:**
+  1. *Database Drug*: `{"drug": "vandetanib"}`
+  2. *Custom Compounds*: `{"cmax_nM": 100, "herg": {"ic50_nM": 50, "hill": 1.0}, "ic50": {...}}`
+- **Output:** Returns simulated action potential waveforms, calcium transient dynamics, and averaged biomarkers across $1\times\text{ to }4\times C_{\max}$.
+
+### 5.3 `/sim_status` — Simulation Service Health Check
+- **Route:** `POST /gradio_api/call/sim_status`
+- **Output:** `{"available": true, "active_jobs": 0}`
+
+---
+
+## 6. Client Implementation Example (JavaScript / TypeScript)
 
 ```bash
-npm i @gradio/client
+npm install @gradio/client
 ```
-```js
+
+```typescript
 import { Client } from "@gradio/client";
+
+// Initialize connection
 const app = await Client.connect("mitcheltastic/tdp-cipa-screening");
 
-const inputs = [qNet, dvdtmax, vmax, vrest, APD50, APD90,
-                max_dv, camax, carest, CaTD50, CaTD90]; // 11 RAW numbers, exact order
+// 11 Biomarker inputs in exact order
+const biomarkers = [
+  0.62631,   // qNet
+  0.99975,   // dvdtmax
+  1.003687,  // vmax
+  -0.999976, // vrest
+  1.422269,  // APD50
+  1.521552,  // APD90
+  -0.631328, // max_dv
+  1.063894,  // camax
+  1.020000,  // carest
+  1.121262,  // CaTD50
+  1.056818   // CaTD90
+];
 
-// Risk tier (instant)
-const pred = await app.predict("/predict", inputs);
-const [probs, tier] = pred.data;      // tier === "High" | "Intermediate" | "Low"
+// 1. Instant Risk Triage + Conformal Safety
+const predResponse = await app.predict("/predict", biomarkers);
+const [probabilities, legacyTier, conformalMeta, uiMarkdown] = predResponse.data;
 
-// SHAP explanation (on demand)
-const exp = await app.predict("/explain", inputs);
-const shap = exp.data[0];             // { predicted_class, base_value, contributions[] }
+console.log("Recommended Action:", conformalMeta.recommended_action);
+console.log("Prediction Set:", conformalMeta.prediction_set);
+console.log("Is OOD / Abstain:", conformalMeta.out_of_distribution);
+
+// 2. Sub-2ms TreeSHAP Explainability
+const explainResponse = await app.predict("/explain", biomarkers);
+const shapData = explainResponse.data[0];
+
+console.log("Top biomarker:", shapData.contributions[0].biomarker, shapData.contributions[0].shap);
 ```
 
 ---
 
-## 6. Rendering the SHAP explanation (suggested)
+## 7. Raw HTTP / cURL Reference
 
-Horizontal bar chart (Chart.js / Recharts / D3 / plain divs):
-- One bar per biomarker; **sort by `|shap|` descending**.
-- Bar length = `shap`; positive one color (toward-risk), negative another (away).
-- Row label = `biomarker` + its raw `value`.
-- Optionally show `base_value` and the resulting `P(predicted tier)` as a header, and a note:
-  "Explaining why this drug was classified **{predicted_class}**."
-
----
-
-## 7. Raw HTTP (no client library)
-
-**Step 1 — POST, get event id:**
+### Step 1 — Initiate Prediction:
 ```bash
 curl -X POST https://mitcheltastic-tdp-cipa-screening.hf.space/gradio_api/call/predict \
   -H "Content-Type: application/json" \
-  -d '{"data": [43.64, 12.3, 40.1, -88.0, 210.0, 441.25, 8.2, 0.0004, 0.0001, 190.0, 260.0]}'
-# -> {"event_id": "abc123"}
+  -d '{"data": [0.62631, 0.99975, 1.003687, -0.999976, 1.422269, 1.521552, -0.631328, 1.063894, 1.02, 1.121262, 1.056818]}'
+# Output: {"event_id": "<EVENT_ID>"}
 ```
-**Step 2 — GET, stream result (do this immediately; event_id expires fast):**
+
+### Step 2 — Stream Result:
 ```bash
-curl -N https://mitcheltastic-tdp-cipa-screening.hf.space/gradio_api/call/predict/abc123
-# event: complete
-# data: [{"label":"High","confidences":[...]}, "High"]
+curl -N https://mitcheltastic-tdp-cipa-screening.hf.space/gradio_api/call/predict/<EVENT_ID>
 ```
-For SHAP, swap `predict` -> `explain` in both URLs.
-
----
-
-## 8. Operational notes
-
-- **Prefix required:** the `/gradio_api` prefix is mandatory. `/call/predict` (no prefix) -> 405.
-- **Cold start:** free CPU Space sleeps after ~48h idle; first request wakes it (a few sec / brief 503). Add retry + loading state. `@gradio/client` waits automatically.
-- **`explain` latency:** seconds, not instant, and slowest on the first call after wake. Keep it behind a button; keep `predict` on the main flow.
-- **Errors:** wrong length / non-numeric input -> HTTP 422. Always send exactly 11 numbers.
-- **CORS:** enabled — browser-side calls work.
